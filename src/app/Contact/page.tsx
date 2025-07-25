@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, AlertCircle, Shield, Zap, ArrowRight } from 'lucide-react';
 
 const ContactPage = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -58,26 +58,26 @@ const ContactPage = () => {
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6" />,
-      title: "Visit Us",
-      details: ["Maruhubi Street", "Zanzibar, Tanzania"],
+      title: "Our Office",
+      details: ["Lagos, Nigeria", "Nairobi, Kenya"],
       color: "text-blue-400"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      details: ["+255 625 851 607", "+255 710 578 275"],
+      details: ["Nigeria: +234 700 356 6045", "Kenya: +254 700 356 604"],
       color: "text-blue-500"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
-      details: ["info@shujaapay.com", "support@shujaapay.com"],
+      details: ["support@kaihma.com", "sales@kaihma.com"],
       color: "text-blue-600"
     },
     {
       icon: <Clock className="w-6 h-6" />,
-      title: "Business Hours",
-      details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Sat: 10:00 AM - 4:00 PM"],
+      title: "Support Hours",
+      details: ["Mon - Fri: 8:00 AM - 6:00 PM", "Sat: 9:00 AM - 2:00 PM"],
       color: "text-blue-700"
     }
   ];
@@ -85,14 +85,17 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-800 to-blue-900 text-white py-20">
+      <section className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center bg-blue-500/20 rounded-full px-4 py-2 mb-6">
+            <span className="text-blue-100 text-sm font-medium">🚀 Trusted by African sellers</span>
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-            Get in Touch
+            Contact Kaihma
           </h1>
           <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-            We're here to help. Reach out to us and let's discuss how we can support your financial goals.
+            Get help with escrow protection, payment guarantees, or learn how to eliminate fake buyers from your business.
           </p>
         </div>
       </section>
@@ -131,24 +134,24 @@ const ContactPage = () => {
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  Send us a Message
+                  Need Escrow Help?
                 </h2>
                 <p className="text-gray-600">
-                  Fill out the form below and we'll get back to you as soon as possible.
+                  Our seller support team will help you set up payment protection and eliminate fake buyers.
                 </p>
               </div>
 
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg flex items-center gap-2 text-blue-800">
                   <CheckCircle className="w-5 h-5" />
-                  <span>Message sent successfully! We'll get back to you soon.</span>
+                  <span>Message sent successfully! Our seller support team will contact you within 24 hours.</span>
                 </div>
               )}
 
               {submitStatus === 'error' && (
                 <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-red-800">
                   <AlertCircle className="w-5 h-5" />
-                  <span>Failed to send message. Please try again or contact us directly.</span>
+                  <span>Failed to send message. Please try again or call us directly.</span>
                 </div>
               )}
 
@@ -166,7 +169,7 @@ const ContactPage = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Enter your full name"
+                      placeholder="Your full name"
                     />
                   </div>
                   <div>
@@ -181,7 +184,7 @@ const ContactPage = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Enter your email"
+                      placeholder="Your business email"
                     />
                   </div>
                 </div>
@@ -189,7 +192,7 @@ const ContactPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number
+                      WhatsApp Number *
                     </label>
                     <input
                       type="tel"
@@ -197,13 +200,14 @@ const ContactPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                      placeholder="+255 123 456 789"
+                      placeholder="+234 800 000 0000"
                     />
                   </div>
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                      Subject *
+                      Inquiry Type *
                     </label>
                     <select
                       id="subject"
@@ -213,11 +217,11 @@ const ContactPage = () => {
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                     >
-                      <option value="">Select a subject</option>
-                      <option value="general">General Inquiry</option>
-                      <option value="support">Technical Support</option>
+                      <option value="">Select inquiry type</option>
+                      <option value="onboarding">Get Started with Escrow</option>
+                      <option value="support">Escrow Support</option>
                       <option value="business">Business Partnership</option>
-                      <option value="feedback">Feedback</option>
+                      <option value="fraud">Report Fraud</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
@@ -225,7 +229,7 @@ const ContactPage = () => {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
+                    How Can We Help? *
                   </label>
                   <textarea
                     id="message"
@@ -235,7 +239,7 @@ const ContactPage = () => {
                     required
                     rows={6}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
-                    placeholder="Tell us how we can help you..."
+                    placeholder="Tell us about your business and payment protection needs..."
                   ></textarea>
                 </div>
 
@@ -252,7 +256,7 @@ const ContactPage = () => {
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
-                      Send Message
+                      Get Payment Protection Help
                     </>
                   )}
                 </button>
@@ -261,58 +265,69 @@ const ContactPage = () => {
 
             {/* Map and Additional Info */}
             <div className="space-y-8">
-              {/* Google Map */}
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div className="p-6 border-b border-gray-100">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    Find Us Here
-                  </h3>
-                  <p className="text-gray-600">
-                    Visit our office for in-person consultations and support.
-                  </p>
-                </div>
-                <div className="h-96 relative">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15780.738607436934!2d39.195149!3d-6.161184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185cd4a3b7c6e3b5%3A0x4e8e8b1f4e8e8b1f!2sMaruhubi%20St%2C%20Zanzibar%2C%20Tanzania!5e0!3m2!1sen!2sus!4v1642678945123!5m2!1sen!2sus"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="ShujaaPay Office Location - Maruhubi Street, Zanzibar"
-                  ></iframe>
+              {/* Support Channels */}
+              <div className="bg-white rounded-2xl shadow-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  Seller Support Channels
+                </h3>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
+                      <Shield className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">
+                        Escrow Protection Help
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        Get 24/7 assistance with setting up and managing your escrow payments.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
+                      <Zap className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">
+                        Urgent Fraud Reports
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        Suspect a fake buyer? Contact us immediately for rapid response.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               {/* FAQ Section */}
               <div className="bg-white rounded-2xl shadow-xl p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Frequently Asked Questions
+                  Seller FAQs
                 </h3>
                 <div className="space-y-6">
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">
-                      How quickly do you respond to inquiries?
+                      How quickly can I set up escrow protection?
                     </h4>
                     <p className="text-gray-600 text-sm">
-                      We typically respond to all inquiries within 24 hours during business days.
+                      You can activate escrow protection in under 10 minutes. Our team is available to guide you through the process.
                     </p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">
-                      Do you offer phone consultations?
+                      What's your response time for seller support?
                     </h4>
                     <p className="text-gray-600 text-sm">
-                      Yes, we offer both phone and video consultations. Contact us to schedule an appointment.
+                      We prioritize seller inquiries - typical response time is under 2 hours during business days.
                     </p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">
-                      What are your support hours?
+                      Do you offer integration help for my online store?
                     </h4>
                     <p className="text-gray-600 text-sm">
-                      Our support team is available Monday through Friday, 9:00 AM to 6:00 PM WAT.
+                      Yes! Our technical team can help integrate Kaihma with Shopify, WooCommerce, and other platforms.
                     </p>
                   </div>
                 </div>
@@ -323,20 +338,21 @@ const ContactPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-blue-800 to-blue-900">
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Get Started?
+            Stop Losing Money to Fake Buyers
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Join thousands of satisfied customers who trust ShujaaPay for their financial needs.
+            Join 1,500+ African sellers who've eliminated payment fraud with Kaihma's escrow protection.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
-              Get Started Today
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 flex items-center justify-center mx-auto">
+              Get Started Free
+              <ArrowRight className="ml-2 h-5 w-5" />
             </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-800 transition-colors duration-200">
-              Learn More
+            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200">
+              WhatsApp Our Team
             </button>
           </div>
         </div>

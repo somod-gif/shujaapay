@@ -6,7 +6,6 @@ import {
   TrendingUp, 
   Heart,
   Target,
-  Award,
   Globe,
   CheckCircle,
   ArrowRight,
@@ -17,7 +16,10 @@ import {
   Smartphone,
   Building,
   Zap,
-  Lock
+  Lock,
+  CreditCard,
+  Package,
+  BadgeCheck
 } from 'lucide-react';
 
 const AboutUsPage = () => {
@@ -27,105 +29,90 @@ const AboutUsPage = () => {
     {
       icon: Target,
       title: "Our Mission",
-      description: "To revolutionize digital payments across Africa by providing secure, accessible, and reliable financial services that empower individuals and businesses to thrive in the digital economy."
+      description: "To eliminate payment fraud in African e-commerce by creating trusted transactions through our escrow protection system."
     },
     {
       icon: Shield,
       title: "Security",
-      description: "We prioritize the security of funds and personal information, using industry-leading practices and bank-level encryption to protect our users."
+      description: "We guarantee payment security before shipment, ensuring sellers never lose money to fake buyers again."
     },
     {
       icon: Heart,
       title: "Trust",
-      description: "Building lasting relationships based on transparency, reliability, and consistent service delivery across all our platforms."
+      description: "Building confidence between buyers and sellers through transparent, guaranteed transactions."
     },
     {
       icon: TrendingUp,
       title: "Growth",
-      description: "Empowering businesses and individuals to grow through secure and trusted digital commerce solutions that scale with their needs."
+      description: "Empowering African businesses to scale by removing the risk of payment rejections and fraud."
     }
   ];
 
   const problems = [
-    "Limited access to reliable payment systems across Africa",
-    "High transaction fees and complex payment processes",
-    "Lack of trust between buyers and sellers in digital commerce",
-    "Barriers to financial inclusion for underserved communities"
+    "Sellers losing ₦40k-150k monthly to fake buyers and POD rejections",
+    "Lack of trust between online buyers and sellers",
+    "Cashflow uncertainty due to payment delays and fraud",
+    "Limited options for secure payment protection"
   ];
 
   const solutions = [
-    "Comprehensive payment platform with multiple service options",
-    "Competitive rates and transparent pricing structures",
-    "Secure escrow services and fraud protection systems",
-    "User-friendly interfaces accessible to all skill levels"
+    "Escrow payment protection before shipping",
+    "Guaranteed payments for sellers",
+    "Zero rejected deliveries system",
+    "Pan-African coverage with local payment options"
   ];
 
   const stats = [
-    { value: "500K+", label: "Active Users", icon: Users },
-    { value: "50M+", label: "Transactions Processed", icon: Zap },
-    { value: "99.9%", label: "Uptime Guarantee", icon: Shield },
-    { value: "15+", label: "Countries Served", icon: Globe }
+    { value: "1,500+", label: "Protected Sellers", icon: Users },
+    { value: "₦500M+", label: "In Escrow", icon: CreditCard },
+    { value: "0", label: "Payment Rejections", icon: BadgeCheck },
+    { value: "5+", label: "Countries Supported", icon: Globe }
   ];
 
   const teamMembers = [
     {
-      name: "David Kiprotich",
+      name: "Oluwaseun Adebayo",
       role: "CEO & Co-Founder",
-      image: "/api/placeholder/300/300",
-      bio: "10+ years in fintech and digital payments across Africa"
+      bio: "10+ years in African e-commerce and payment solutions"
     },
     {
-      name: "Sarah Mwangi",
-      role: "CTO & Co-Founder", 
-      image: "/api/placeholder/300/300",
-      bio: "Former software architect with expertise in secure payment systems"
+      name: "Amina Mohammed", 
+      role: "CTO & Co-Founder",
+      bio: "Fintech security expert specializing in escrow systems"
     },
     {
-      name: "James Okello",
-      role: "Head of Operations",
-      image: "/api/placeholder/300/300",
-      bio: "Specialist in African market expansion and regulatory compliance"
+      name: "Kwame Mensah",
+      role: "Head of Growth",
+      bio: "Driving adoption of secure payments across African markets"
     },
     {
-      name: "Grace Mutua",
-      role: "Head of Product",
-      image: "/api/placeholder/300/300",
-      bio: "UX expert focused on creating accessible financial products"
+      name: "Ngozi Eze",
+      role: "Head of Seller Success",
+      bio: "Dedicated to helping sellers maximize their online business"
     }
   ];
 
   const testimonials = [
     {
-      name: "Maria Gonzalez",
-      role: "Small Business Owner",
-      company: "Mama's Kitchen, Nairobi",
-      image: "/api/placeholder/80/80",
+      name: "Adunni Okafor",
+      role: "Fashion Store Owner",
+      company: "Lagos, Nigeria",
       rating: 5,
-      text: "ShujaaPay has transformed how I handle payments. My customers love the convenience, and I've seen a 40% increase in sales since integrating their payment gateway."
+      text: "Kaihma saved me from losing ₦80k monthly to fake buyers. Now I process ₦450k monthly with zero rejections!"
     },
     {
-      name: "John Mwamba",
-      role: "E-commerce Manager",
-      company: "TechStore Tanzania",
-      image: "/api/placeholder/80/80",
+      name: "Samuel Maina",
+      role: "Freelance Developer",
+      company: "Nairobi, Kenya",
       rating: 5,
-      text: "The escrow service gives our customers confidence to make larger purchases. We've reduced payment disputes by 80% and improved customer satisfaction significantly."
+      text: "I was stressed about client payments until Kaihma. Now I handle 50+ orders weekly worry-free."
     },
     {
-      name: "Fatma Ali",
-      role: "Freelance Designer",
-      company: "Creative Studio",
-      image: "/api/placeholder/80/80",
+      name: "Victory Eze",
+      role: "Dropshipper",
+      company: "Abuja, Nigeria",
       rating: 5,
-      text: "As a freelancer, getting paid on time was always a challenge. ShujaaPay's secure payment system ensures I get paid promptly and safely for my work."
-    },
-    {
-      name: "Peter Ndung'u",
-      role: "CFO",
-      company: "GreenTech Solutions",
-      image: "/api/placeholder/80/80",
-      rating: 5,
-      text: "The analytics and reporting features help us track all payments efficiently. ShujaaPay has streamlined our financial operations across multiple countries."
+      text: "I was ready to quit e-commerce until Kaihma. The escrow system helped me scale and hire my second employee."
     }
   ];
 
@@ -140,45 +127,51 @@ const AboutUsPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-blue-600 text-white pt-24 pb-16">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white pt-24 pb-16">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-flex items-center bg-blue-500/20 rounded-full px-4 py-2 mb-6">
+              <span className="text-blue-100 text-sm font-medium">🚀 Trusted by African sellers</span>
+            </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              About ShujaaPay
+              About Kaihma
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
-              We are revolutionizing digital commerce in Africa by providing secure, accessible payment solutions that build trust and empower growth across the continent.
+              We're building the trust infrastructure for African e-commerce, eliminating payment fraud and rejected deliveries through our escrow protection system.
             </p>
-            <button className="bg-white text-blue-600 hover:bg-gray-50 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
-              Get Started Today
+            <button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg flex items-center justify-center mx-auto">
+              Get Started Free
+              <ArrowRight className="ml-2 h-5 w-5" />
             </button>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <Icon className="h-8 w-8" />
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => {
+                const Icon = stat.icon;
+                return (
+                  <div key={index} className="text-center">
+                    <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                    <div className="text-gray-600 font-medium">{stat.label}</div>
                   </div>
-                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                  <div className="text-gray-600">{stat.label}</div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Our Story Section */}
       <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -186,17 +179,17 @@ const AboutUsPage = () => {
               </h2>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  ShujaaPay was founded with a simple yet powerful vision: to create a trusted environment for digital commerce across Africa. We recognized that the lack of accessible, secure payment solutions was a major barrier to economic growth in our region.
+                  Kaihma was born from our founders' frustration with losing money to fake buyers and payment-on-delivery rejections. As former online sellers ourselves, we experienced firsthand the pain of unreliable payments.
                 </p>
                 <p>
-                  Starting as a small team of passionate technologists and financial experts, we set out to build payment infrastructure that would serve everyone - from individual users sending money to family, to large enterprises processing thousands of transactions daily.
+                  In 2022, we set out to solve this problem by creating Africa's first seller-focused escrow system. Our solution ensures sellers get paid before shipping, while giving buyers confidence their money is protected.
                 </p>
                 <p>
-                  Today, we're proud to serve over 500,000 users across 15+ African countries, processing millions of transactions safely and efficiently. Our journey has just begun, and we're committed to expanding financial inclusion across the continent.
+                  Today, we're proud to protect over 1,500 African sellers from payment fraud, securing ₦500M+ in transactions with zero rejected deliveries. Our mission is to make e-commerce safer for every African business.
                 </p>
               </div>
               <button className="mt-8 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center group">
-                Learn More About Our Services
+                How Escrow Protection Works
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -204,20 +197,20 @@ const AboutUsPage = () => {
               <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl p-8 shadow-xl">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white rounded-xl p-4 shadow-md">
-                    <Smartphone className="h-8 w-8 text-blue-600 mb-2" />
-                    <div className="text-sm font-semibold text-gray-900">Mobile Money</div>
+                    <Shield className="h-8 w-8 text-blue-600 mb-2" />
+                    <div className="text-sm font-semibold text-gray-900">Payment Guarantee</div>
                   </div>
                   <div className="bg-white rounded-xl p-4 shadow-md">
-                    <Building className="h-8 w-8 text-blue-600 mb-2" />
-                    <div className="text-sm font-semibold text-gray-900">Merchant Solutions</div>
+                    <Package className="h-8 w-8 text-blue-600 mb-2" />
+                    <div className="text-sm font-semibold text-gray-900">Zero Rejections</div>
                   </div>
                   <div className="bg-white rounded-xl p-4 shadow-md">
-                    <Lock className="h-8 w-8 text-blue-600 mb-2" />
-                    <div className="text-sm font-semibold text-gray-900">Secure Escrow</div>
+                    <CreditCard className="h-8 w-8 text-blue-600 mb-2" />
+                    <div className="text-sm font-semibold text-gray-900">Escrow Protection</div>
                   </div>
                   <div className="bg-white rounded-xl p-4 shadow-md">
                     <Zap className="h-8 w-8 text-blue-600 mb-2" />
-                    <div className="text-sm font-semibold text-gray-900">Instant Transfers</div>
+                    <div className="text-sm font-semibold text-gray-900">Instant Payouts</div>
                   </div>
                 </div>
               </div>
@@ -228,13 +221,13 @@ const AboutUsPage = () => {
 
       {/* Mission & Values */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Our Mission & Values
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We are driven by our commitment to building trust and enabling secure digital commerce across Africa
+              We exist to create trust in African e-commerce through guaranteed payments
             </p>
           </div>
 
@@ -261,13 +254,13 @@ const AboutUsPage = () => {
 
       {/* Why We Exist */}
       <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why We Exist
+              The Kaihma Difference
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The challenges we solve and the impact we create in the African digital commerce landscape
+              Solving the payment problems African sellers face every day
             </p>
           </div>
 
@@ -276,7 +269,7 @@ const AboutUsPage = () => {
             <div className="bg-red-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <div className="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
-                The Problem
+                What Sellers Endure
               </h3>
               <div className="space-y-4">
                 {problems.map((problem, index) => (
@@ -292,7 +285,7 @@ const AboutUsPage = () => {
             <div className="bg-green-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                Our Solution
+                How Kaihma Fixes It
               </h3>
               <div className="space-y-4">
                 {solutions.map((solution, index) => (
@@ -307,15 +300,48 @@ const AboutUsPage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Team Section */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Our Users Say
+              Meet The Team
             </h2>
             <p className="text-xl text-gray-600">
-              Real stories from businesses and individuals across Africa
+              Passionate Africans building payment security for African sellers
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.map((member, index) => (
+              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center">
+                <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4">
+                  {member.name.split(' ').map(n => n[0]).join('')}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-1">
+                  {member.name}
+                </h3>
+                <p className="text-blue-600 font-medium mb-3">
+                  {member.role}
+                </p>
+                <p className="text-gray-600 text-sm">
+                  {member.bio}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Success Stories
+            </h2>
+            <p className="text-xl text-gray-600">
+              African sellers thriving with Kaihma's protection
             </p>
           </div>
 
@@ -386,16 +412,16 @@ const AboutUsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-blue-600 py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-20">
+        <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Join Our Journey?
+            Ready to Stop Losing Money?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Be part of the digital payment revolution in Africa. Start your secure transaction experience today.
+            Join 1,500+ African sellers who've eliminated payment fraud with Kaihma's escrow protection.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 hover:bg-gray-50 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+            <button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
               Get Started Free
             </button>
             <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
