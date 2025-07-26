@@ -19,6 +19,8 @@ import {
 
 const Page = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [animatedValue, setAnimatedValue] = useState(0);
+  const [currentHeroTestimonial, setCurrentHeroTestimonial] = useState(0);
 
   // Auto-rotate testimonials every 4 seconds
   useEffect(() => {
@@ -26,7 +28,19 @@ const Page = () => {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 4000);
 
-    return () => clearInterval(interval);
+    const heroTestimonialInterval = setInterval(() => {
+      setCurrentHeroTestimonial((prev) => (prev + 1) % heroTestimonials.length);
+    }, 4000);
+
+    const animationInterval = setInterval(() => {
+      setAnimatedValue((prev) => (prev + 1000) % 50000);
+    }, 100);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(heroTestimonialInterval);
+      clearInterval(animationInterval);
+    };
   }, []);
 
   const nextTestimonial = () => {
@@ -129,81 +143,425 @@ const Page = () => {
     },
   ];
 
+  const heroTestimonials = [
+    {
+      name: "Adebayo O.",
+      business: "Electronics Seller",
+      text: "No more fake buyers! Kaihma saved me ₦200k last month",
+    },
+    {
+      name: "Fatima A.",
+      business: "Fashion Store",
+      text: "100% payment guarantee. My business finally feels secure",
+    },
+    {
+      name: "Chidi M.",
+      business: "Phone Dealer",
+      text: "Zero scams since I started using Kaihma. Amazing!",
+    },
+  ];
+
   const stats = [
-    { number: "10K+", label: "Protected Transactions" },
-    { number: "₦500M+", label: "In Escrow" },
-    { number: "98%", label: "Success Rate" },
+    { number: "50,000+", label: "Protected Transactions" },
+    { number: "₦2.5B+", label: "Secured in Escrow" },
+    { number: "99.9%", label: "Success Rate" },
     { number: "0", label: "Payment Rejections" },
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white pt-20 pb-32 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Enhanced Hero Section */}
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-purple-800 text-white pt-20 pb-32 overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-4 -right-4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+          <div
+            className="absolute top-1/2 -left-20 w-80 h-80 bg-purple-400/10 rounded-full blur-2xl animate-pulse"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="absolute bottom-10 right-1/3 w-60 h-60 bg-blue-300/10 rounded-full blur-2xl animate-pulse"
+            style={{ animationDelay: "4s" }}
+          ></div>
+        </div>
+
+        {/* Floating Icons */}
+        <div className="absolute inset-0 pointer-events-none">
+          <Shield
+            className="absolute top-1/4 left-1/4 w-8 h-8 text-white/20 animate-bounce"
+            style={{ animationDelay: "1s" }}
+          />
+          <CheckCircle
+            className="absolute top-1/3 right-1/4 w-6 h-6 text-green-300/30 animate-bounce"
+            style={{ animationDelay: "3s" }}
+          />
+          <Star
+            className="absolute bottom-1/3 left-1/6 w-5 h-5 text-yellow-300/40 animate-bounce"
+            style={{ animationDelay: "2s" }}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Hero Content */}
-            <div>
-              <div className="inline-flex items-center bg-blue-500/20 rounded-full px-4 py-2 mb-6">
-                <span className="text-blue-100 text-sm font-medium">
-                  🚀 Trusted by African sellers
-                </span>
-              </div>
-
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Stop Losing Money
-                <span className="block text-blue-200">To Fake Buyers</span>
-              </h1>
-
-              <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
-                Kaihma's escrow system guarantees your payments before you ship.
-                No more rejected deliveries or payment scams.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 transform hover:scale-105 flex items-center justify-center">
-                  Get Started Free
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </button>
-                <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 flex items-center justify-center">
-                  <Play className="mr-2 h-5 w-5" />
-                  How It Works
-                </button>
-              </div>
-            </div>
-
-            {/* Hero Visual */}
-            <div className="relative">
-              <div className="bg-white rounded-2xl p-6 shadow-2xl">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-gray-900 font-semibold">
-                    Secure Transaction
-                  </h3>
-                  <span className="text-green-600 text-sm font-medium bg-green-50 px-2 py-1 rounded">
-                    ✓ Protected
+            {/* Enhanced Hero Content */}
+            <div className="space-y-8">
+              {/* Trust Badge with Animation */}
+              <div className="inline-flex items-center bg-gradient-to-r from-green-500/20 to-blue-500/20 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 animate-fade-in">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-green-100">
+                    🛡️ 50,000+ sellers protected • Zero fraud guarantee
                   </span>
                 </div>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Order Value</span>
-                    <span className="text-2xl font-bold text-gray-900">
-                      ₦50,000
-                    </span>
+              </div>
+
+              {/* Dynamic Headline */}
+              <div className="space-y-4">
+                <h1 className="text-5xl md:text-7xl font-black leading-tight">
+                  <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                    Stop Losing
+                  </span>
+                  <br />
+                  <span className="text-white">Money To</span>
+                  <br />
+                  <span className="bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
+                    Fake Buyers
+                  </span>
+                </h1>
+
+                <div className="h-1 w-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+              </div>
+
+              {/* Enhanced Description */}
+              <p className="text-xl md:text-2xl text-blue-100 leading-relaxed max-w-lg">
+                <span className="font-semibold text-white">
+                  Kaihma's AI-powered escrow
+                </span>{" "}
+                guarantees your payments before shipping. Join thousands of
+                African sellers who sleep peacefully knowing their money is{" "}
+                <span className="text-green-300 font-semibold">
+                  always protected
+                </span>
+                .
+              </p>
+
+              {/* Social Proof Stats */}
+              <div className="grid grid-cols-3 gap-6 py-6">
+                {stats.slice(0, 3).map((stat, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-2xl md:text-3xl font-bold text-white">
+                      {stat.number}
+                    </div>
+                    <div className="text-sm text-blue-200">{stat.label}</div>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Status</span>
-                    <span className="text-gray-900 font-medium">
-                      Funds secured in escrow
-                    </span>
+                ))}
+              </div>
+
+              {/* Enhanced CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="group bg-gradient-to-r from-white to-blue-50 text-blue-700 hover:from-blue-50 hover:to-white px-8 py-5 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                  <span className="relative z-10">Start Selling Safely</span>
+                  <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform relative z-10" />
+                </button>
+
+                <button className="group border-2 border-white/80 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-5 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center justify-center hover:border-white hover:shadow-lg">
+                  <Play className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
+                  Watch Demo (2 min)
+                </button>
+              </div>
+
+              {/* Rotating Testimonial */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">
+                        {heroTestimonials[currentHeroTestimonial].name.charAt(
+                          0
+                        )}
+                      </span>
+                    </div>
                   </div>
-                  <div className="border-t pt-4">
-                    <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                      Release Payment
-                    </button>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-white/90 text-lg italic mb-2">
+                      "{heroTestimonials[currentHeroTestimonial].text}"
+                    </p>
+                    <div className="flex items-center space-x-2">
+                      <p className="text-sm font-semibold text-blue-200">
+                        {heroTestimonials[currentHeroTestimonial].name}
+                      </p>
+                      <span className="text-blue-300">•</span>
+                      <p className="text-sm text-blue-300">
+                        {heroTestimonials[currentHeroTestimonial].business}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* Enhanced Hero Visual */}
+            <div className="relative">
+              {/* Main Dashboard Mockup */}
+              <div className="bg-white rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition-transform duration-500 relative z-10">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                      <Shield className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-gray-900 font-bold text-lg">
+                        Secure Transaction
+                      </h3>
+                      <p className="text-gray-500 text-sm">
+                        Real-time protection
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2 text-green-600 text-sm font-semibold bg-green-50 px-4 py-2 rounded-full">
+                    <CheckCircle className="h-4 w-4" />
+                    <span>Verified & Protected</span>
+                  </div>
+                </div>
+
+                {/* Transaction Details */}
+                <div className="space-y-6">
+                  <div className="bg-gray-50 rounded-2xl p-6">
+                    <div className="flex justify-between items-center mb-4">
+                      <span className="text-gray-600 font-medium">
+                        Order Value
+                      </span>
+                      <div className="text-right">
+                        <div className="text-3xl font-black text-gray-900">
+                          ₦{(45000 + (animatedValue % 10000)).toLocaleString()}
+                        </div>
+                        <div className="text-sm text-green-600 font-medium">
+                          +12% from last month
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div>
+                        <span className="text-gray-500 text-sm">Status</span>
+                        <div className="font-semibold text-gray-900 flex items-center">
+                          <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                          Funds Secured
+                        </div>
+                      </div>
+                      <div>
+                        <span className="text-gray-500 text-sm">Delivery</span>
+                        <p className="font-semibold text-gray-900">
+                          Confirmed ✓
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Progress Bar */}
+                    <div className="mb-4">
+                      <div className="flex justify-between text-sm text-gray-600 mb-2">
+                        <span>Transaction Progress</span>
+                        <span>Ready to release</span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div className="bg-gradient-to-r from-green-400 to-blue-500 h-2 rounded-full w-full transition-all duration-1000"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Action Button */}
+                  <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    Release Payment Instantly
+                  </button>
+
+                  {/* Security Features */}
+                  <div className="grid grid-cols-3 gap-3 pt-4 border-t">
+                    <div className="text-center">
+                      <Shield className="h-6 w-6 text-blue-500 mx-auto mb-1" />
+                      <p className="text-xs text-gray-600 font-medium">
+                        AI Fraud Detection
+                      </p>
+                    </div>
+                    <div className="text-center">
+                      <CheckCircle className="h-6 w-6 text-green-500 mx-auto mb-1" />
+                      <p className="text-xs text-gray-600 font-medium">
+                        Instant Verification
+                      </p>
+                    </div>
+                    <div className="text-center">
+                      <Users className="h-6 w-6 text-purple-500 mx-auto mb-1" />
+                      <p className="text-xs text-gray-600 font-medium">
+                        24/7 Support
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating Success Notification */}
+              <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg animate-bounce z-20">
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="h-4 w-4" />
+                  <span className="text-sm font-semibold">
+                    Payment Secured!
+                  </span>
+                </div>
+              </div>
+
+              {/* Floating Stats Cards */}
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl z-20 transform hover:scale-105 transition-transform">
+                <div className="flex items-center space-x-3">
+                  <TrendingUp className="h-8 w-8 text-green-500" />
+                  <div>
+                    <p className="text-sm text-gray-600">Success Rate</p>
+                    <p className="font-bold text-xl text-gray-900">99.9%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-12 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+            <div className="flex">
+              <div className="flex-shrink-0">
+                <svg
+                  className="h-5 w-5 text-red-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="ml-3">
+                <h3 className="text-lg font-bold text-red-800 mb-4">
+                  It's 11 PM. Another "customer" just rejected your ₦15,000
+                  delivery.
+                </h3>
+                <div className="mt-2 text-red-700">
+                  <p className="font-semibold mb-2">
+                    You're losing ₦40k-150k monthly to:
+                  </p>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Fake buyers who waste your time</li>
+                    <li>POD failures that steal your inventory</li>
+                    <li>
+                      The constant stress of "Will they pay or won't they?"
+                    </li>
+                  </ul>
+                  <div className="mt-4 p-3 bg-red-100 rounded-lg text-center">
+                    <p className="text-2xl font-bold text-red-800">
+                      ₦40k-150k{" "}
+                      <span className="text-lg font-normal">
+                        lost every single month
+                      </span>
+                    </p>
+                  </div>
+                  <p className="mt-4 italic">
+                    While you're losing sleep, other sellers sleep peacefully.
+                  </p>
+                  <p className="mt-2 font-bold">
+                    What's the difference? They stopped playing the broken game.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution Section - Added after Problem section */}
+      <section className="bg-blue-50 py-12 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Meet Kaihma
+            </h2>
+            <p className="text-xl text-gray-600">
+              The infrastructure that makes POD failures impossible.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <div className="text-blue-600 text-2xl mb-3">1</div>
+              <h3 className="text-xl font-bold mb-2">
+                Customers pay into escrow first
+              </h3>
+              <p className="text-gray-600">
+                No more "I'll pay when I see it" games
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <div className="text-blue-600 text-2xl mb-3">2</div>
+              <h3 className="text-xl font-bold mb-2">
+                Your money is guaranteed
+              </h3>
+              <p className="text-gray-600">Before you even ship the product</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <div className="text-blue-600 text-2xl mb-3">3</div>
+              <h3 className="text-xl font-bold mb-2">
+                Zero rejected deliveries
+              </h3>
+              <p className="text-gray-600">
+                The system won't allow it to happen
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <div className="text-blue-600 text-2xl mb-3">4</div>
+              <h3 className="text-xl font-bold mb-2">Build customer trust</h3>
+              <p className="text-gray-600">
+                Verified seller status increases conversions
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 bg-white rounded-xl shadow-lg p-6 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-center mb-6">
+              Proof It Works
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="border-l-4 border-blue-500 pl-4">
+                <p className="text-gray-600">Was losing ₦80k/month</p>
+                <p className="text-lg font-bold">
+                  → Now makes ₦450k with zero rejections
+                </p>
+                <p className="text-sm text-gray-500 mt-1">- Adunni, Ibadan</p>
+              </div>
+              <div className="border-l-4 border-blue-500 pl-4">
+                <p className="text-gray-600">Couldn't sleep from stress</p>
+                <p className="text-lg font-bold">
+                  → Processes 50+ orders weekly worry-free
+                </p>
+                <p className="text-sm text-gray-500 mt-1">- Samuel, Lagos</p>
+              </div>
+              <div className="border-l-4 border-blue-500 pl-4">
+                <p className="text-gray-600">Ready to quit selling online</p>
+                <p className="text-lg font-bold">
+                  → Just hired her second employee
+                </p>
+                <p className="text-sm text-gray-500 mt-1">- Victory, Abuja</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 bg-red-100 border-l-4 border-red-500 p-6 rounded-lg max-w-2xl mx-auto">
+            <h3 className="text-xl font-bold text-red-800 mb-3">
+              The Cost of Waiting
+            </h3>
+            <p className="text-red-700 font-semibold">
+              Every day: ₦1,300-5,000 lost to these problems
+            </p>
           </div>
         </div>
       </section>
@@ -352,7 +710,6 @@ const Page = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                  
                   <div className="text-center sm:text-left">
                     <div className="font-bold text-gray-900 text-md md:text-lg">
                       {testimonials[currentTestimonial].name}
@@ -548,6 +905,8 @@ const Page = () => {
           </div>
         </div>
       </section>
+
+      
     </div>
   );
 };
