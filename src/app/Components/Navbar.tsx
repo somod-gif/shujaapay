@@ -124,7 +124,7 @@ const Navbar = ({ logo }: NavbarProps) => {
             
             {/* Modern CTA button with gradient */}
             <a
-              href="#get-started"
+              href="/Auth/Register"
               className="relative bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-blue-600/25"
             >
               <span className="relative z-10">Get Started</span>
@@ -216,7 +216,7 @@ const Navbar = ({ logo }: NavbarProps) => {
 
             {/* Mobile CTA Button */}
             <a
-              href="#get-started"
+              href="/Auth/Register"
               className={`block mt-2 w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-center px-6 py-3 rounded-xl text-base font-medium transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-600/25 ${
                 isOpen ? 'animate-slide-up' : ''
               }`}

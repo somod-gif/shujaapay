@@ -249,7 +249,7 @@ const KaihmaLanding: React.FC = () => {
                   </span>
                 </div>
               </div>
-    
+
               {/* Dynamic Headline - Responsive Typography */}
               <div className="space-y-2 sm:space-y-3 lg:space-y-4">
                 <h1 className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight">
@@ -294,11 +294,11 @@ const KaihmaLanding: React.FC = () => {
 
               {/* Enhanced CTA Buttons - Responsive Stacking */}
               <div className="flex flex-col space-y-3 sm:space-y-4 lg:flex-row lg:space-y-0 lg:space-x-4">
-                <button className="group bg-gradient-to-r from-white to-blue-50 text-blue-700 hover:from-blue-50 hover:to-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center relative overflow-hidden">
+                <a href="/Auth/Register" className="group bg-gradient-to-r from-white to-blue-50 text-blue-700 hover:from-blue-50 hover:to-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                   <span className="relative z-10">Start Building Your Store</span>
                   <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 group-hover:translate-x-1 transition-transform relative z-10" />
-                </button>
+                </a>
 
                 <button className="group border-2 border-white/80 text-white hover:bg-white/10 backdrop-blur-sm px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-semibold transition-all duration-300 flex items-center justify-center hover:border-white hover:shadow-lg">
                   <Play className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 group-hover:scale-110 transition-transform" />
