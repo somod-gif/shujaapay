@@ -20,10 +20,10 @@ const Navbar = ({ logo }: NavbarProps) => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com/kaihmahq', label: 'Facebook' },
+    { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61576003595160', label: 'Facebook' },
     { icon: Twitter, href: 'https://twitter.com/kaihmahq', label: 'Twitter' },
-    { icon: Linkedin, href: 'https://linkedin.com/company/kaihma', label: 'LinkedIn' },
-    { icon: Instagram, href: 'https://instagram.com/kaihmahq', label: 'Instagram' }
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/kaihma', label: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/kaihmahq?igsh=MWVmMnV0dGltYnhnNw==', label: 'Instagram' },
   ];
 
   // Handle scroll effect

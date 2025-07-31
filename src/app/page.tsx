@@ -1,4 +1,3 @@
-// app/page.tsx
 "use client";
 import React, { useState, useEffect } from "react";
 import {
@@ -15,9 +14,19 @@ import {
   Play,
   ChevronLeft,
   ChevronRight,
+  Store,
+  Truck,
+  UserCheck,
+  BarChart3,
+  Layers,
+  Coins,
+  ShoppingBag,
+  Wifi,
+  Clock,
+  Target
 } from "lucide-react";
 
-const Page = () => {
+const KaihmaLanding: React.FC = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [animatedValue, setAnimatedValue] = useState(0);
   const [currentHeroTestimonial, setCurrentHeroTestimonial] = useState(0);
@@ -53,62 +62,61 @@ const Page = () => {
     );
   };
 
-  const features = [
+  const coreFeatures = [
+    {
+      icon: Store,
+      title: "Mobile-First Store Builder",
+      description: "Create stunning online shops in minutes, optimized for smartphones and low data usage"
+    },
     {
       icon: Shield,
-      title: "Payment Guarantee",
-      description:
-        "Funds secured in escrow before you ship or deliver services",
+      title: "Built-in Escrow System",
+      description: "Cross-border payments with guaranteed money release only after confirmed delivery"
     },
     {
-      icon: Zap,
-      title: "Instant Payouts",
-      description: "Get paid immediately when buyers confirm delivery",
+      icon: Truck,
+      title: "Integrated Logistics",
+      description: "Track deliveries, capture proof, and ensure reliable fulfillment across Africa"
     },
     {
-      icon: Globe,
-      title: "Pan-African",
-      description: "Works across Nigeria, Kenya, and major African markets",
-    },
-    {
-      icon: Users,
-      title: "Fraud Protection",
-      description: "Verified buyers only - no more fake orders",
-    },
+      icon: UserCheck,
+      title: "Trust Infrastructure",
+      description: "Verified sellers, ratings system, and transparent dispute resolution"
+    }
   ];
 
   const services = [
     {
+      icon: ShoppingBag,
+      title: "E-commerce Store Creation",
+      description: "Complete online store with mobile checkout",
+      features: [
+        "Theme builder & customization",
+        "Inventory management tools",
+        "Product upload & optimization",
+        "Custom domain integration"
+      ],
+    },
+    {
       icon: CreditCard,
-      title: "E-commerce Protection",
-      description: "Sell online with guaranteed payments",
+      title: "Wallet & Payment System",
+      description: "Secure cross-border payments with escrow protection",
       features: [
-        "Pre-payment escrow",
-        "Auto-payout on delivery",
-        "Buyer verification",
-        "Dispute resolution",
+        "Multi-currency support",
+        "Automated escrow release",
+        "Payment tracking & history",
+        "Instant payout on delivery"
       ],
     },
     {
-      icon: Smartphone,
-      title: "Freelancer Security",
-      description: "Get paid upfront for your work",
+      icon: BarChart3,
+      title: "Business Analytics",
+      description: "Real-time insights and performance tracking",
       features: [
-        "Milestone payments",
-        "Client verification",
-        "Work protection",
-        "Secure contracts",
-      ],
-    },
-    {
-      icon: TrendingUp,
-      title: "B2B Transactions",
-      description: "Secure large business deals with confidence",
-      features: [
-        "Bulk order protection",
-        "Document verification",
-        "Multi-party escrow",
-        "API integration",
+        "Sales dashboard & reports",
+        "Customer behavior analytics",
+        "Inventory tracking",
+        "Revenue optimization tools"
       ],
     },
   ];
@@ -118,26 +126,23 @@ const Page = () => {
       name: "Adunni Okafor",
       role: "Fashion Store Owner",
       location: "Lagos, Nigeria",
-      content:
-        "Kaihma saved me from losing ₦80k monthly to fake buyers. Now I process ₦450k monthly with zero rejections!",
+      content: "KAIHMA's escrow system saved me from losing ₦80k monthly to fake buyers. Now I process ₦450k monthly with complete peace of mind!",
       rating: 5,
       avatar: "AO",
     },
     {
-      name: "Samuel Maina",
-      role: "Freelance Developer",
+      name: "Samuel Maina", 
+      role: "Tech Entrepreneur",
       location: "Nairobi, Kenya",
-      content:
-        "I was stressed about client payments until Kaihma. Now I handle 50+ orders weekly worry-free.",
+      content: "The integrated logistics and payment system helped me scale from 10 to 200+ orders monthly. KAIHMA handles everything seamlessly.",
       rating: 5,
       avatar: "SM",
     },
     {
       name: "Victory Eze",
       role: "Dropshipper",
-      location: "Abuja, Nigeria",
-      content:
-        "I was ready to quit e-commerce until Kaihma. The escrow system helped me scale and hire my second employee.",
+      location: "Abuja, Nigeria", 
+      content: "I was ready to quit e-commerce until KAIHMA. The trust infrastructure helped me scale and hire my second employee.",
       rating: 5,
       avatar: "VE",
     },
@@ -147,152 +152,180 @@ const Page = () => {
     {
       name: "Adebayo O.",
       business: "Electronics Seller",
-      text: "No more fake buyers! Kaihma saved me ₦200k last month",
+      text: "KAIHMA's Commerce OS eliminated all my payment headaches"
     },
     {
       name: "Fatima A.",
       business: "Fashion Store",
-      text: "100% payment guarantee. My business finally feels secure",
+      text: "Built my entire online business in under 30 minutes"
     },
     {
       name: "Chidi M.",
-      business: "Phone Dealer",
-      text: "Zero scams since I started using Kaihma. Amazing!",
+      business: "Phone Dealer", 
+      text: "Cross-border payments finally work reliably in Africa"
     },
   ];
 
   const stats = [
-    { number: "50,000+", label: "Protected Transactions" },
+    { number: "50,000+", label: "Transactions Protected" },
     { number: "₦2.5B+", label: "Secured in Escrow" },
     { number: "99.9%", label: "Success Rate" },
-    { number: "0", label: "Payment Rejections" },
+    { number: "15+", label: "African Countries" },
+  ];
+
+  const problemPoints = [
+    "Complex payment systems that don't work across borders",
+    "Broken logistics that lose your products and damage trust", 
+    "No buyer protection leading to constant fraud fears",
+    "Technical barriers preventing quick store setup",
+    "Lack of integrated tools forcing expensive third-party solutions"
+  ];
+
+  const solutionSteps = [
+    {
+      step: "1",
+      title: "Quick Store Setup",
+      description: "Launch your mobile-optimized store in minutes with our drag-and-drop builder"
+    },
+    {
+      step: "2", 
+      title: "Secure Payments",
+      description: "Customers pay into escrow first - your money is guaranteed before shipping"
+    },
+    {
+      step: "3",
+      title: "Reliable Delivery", 
+      description: "Our logistics network tracks every package with proof of delivery"
+    },
+    {
+      step: "4",
+      title: "Instant Payout",
+      description: "Money releases automatically when delivery is confirmed"
+    }
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-purple-800 text-white pt-20 pb-32 overflow-hidden">
+      {/* Enhanced Hero Section - Super Responsive */}
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-purple-800 text-white pt-12 sm:pt-16 md:pt-20 pb-16 sm:pb-24 md:pb-32 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-4 -right-4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute -top-4 -right-4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
           <div
-            className="absolute top-1/2 -left-20 w-80 h-80 bg-purple-400/10 rounded-full blur-2xl animate-pulse"
+            className="absolute top-1/2 -left-10 sm:-left-20 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-purple-400/10 rounded-full blur-2xl animate-pulse"
             style={{ animationDelay: "2s" }}
           ></div>
           <div
-            className="absolute bottom-10 right-1/3 w-60 h-60 bg-blue-300/10 rounded-full blur-2xl animate-pulse"
+            className="absolute bottom-10 right-1/3 w-32 h-32 sm:w-48 sm:h-48 lg:w-60 lg:h-60 bg-blue-300/10 rounded-full blur-2xl animate-pulse"
             style={{ animationDelay: "4s" }}
           ></div>
         </div>
 
-        {/* Floating Icons */}
+        {/* Floating Icons - Responsive positioning */}
         <div className="absolute inset-0 pointer-events-none">
           <Shield
-            className="absolute top-1/4 left-1/4 w-8 h-8 text-white/20 animate-bounce"
+            className="absolute top-1/4 left-1/4 w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white/20 animate-bounce"
             style={{ animationDelay: "1s" }}
           />
-          <CheckCircle
-            className="absolute top-1/3 right-1/4 w-6 h-6 text-green-300/30 animate-bounce"
+          <Store
+            className="absolute top-1/3 right-1/4 w-3 h-3 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-green-300/30 animate-bounce"
             style={{ animationDelay: "3s" }}
           />
-          <Star
-            className="absolute bottom-1/3 left-1/6 w-5 h-5 text-yellow-300/40 animate-bounce"
+          <Coins
+            className="absolute bottom-1/3 left-1/6 w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-yellow-300/40 animate-bounce"
             style={{ animationDelay: "2s" }}
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Enhanced Hero Content */}
-            <div className="space-y-8">
-              {/* Trust Badge with Animation */}
-              <div className="inline-flex items-center bg-gradient-to-r from-green-500/20 to-blue-500/20 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 animate-fade-in">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-green-100">
-                    🛡️ 50,000+ sellers protected • Zero fraud guarantee
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+            {/* Enhanced Hero Content - Mobile First */}
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8 text-center lg:text-left">
+              {/* Brand Badge - Responsive */}
+              <div className="inline-flex items-center bg-gradient-to-r from-green-500/20 to-blue-500/20 backdrop-blur-sm rounded-full px-3 sm:px-4 lg:px-6 py-2 sm:py-3 border border-white/20 animate-fade-in">
+                <div className="flex items-center space-x-1 sm:space-x-2">
+                  <span className="text-xs sm:text-sm font-medium text-green-100">
+                    🌍 KAIHMA - The Commerce Operating System for Africa
                   </span>
                 </div>
               </div>
 
-              {/* Dynamic Headline */}
-              <div className="space-y-4">
-                <h1 className="text-5xl md:text-7xl font-black leading-tight">
+              {/* Dynamic Headline - Responsive Typography */}
+              <div className="space-y-2 sm:space-y-3 lg:space-y-4">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight">
                   <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-                    Stop Losing
+                    Make eCommerce
                   </span>
                   <br />
-                  <span className="text-white">Money To</span>
+                  <span className="text-white">Actually</span>
                   <br />
-                  <span className="bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
-                    Fake Buyers
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent animate-pulse">
+                    Work in Africa
                   </span>
                 </h1>
 
-                <div className="h-1 w-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+                <div className="h-1 w-16 sm:w-24 lg:w-32 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mx-auto lg:mx-0"></div>
               </div>
 
-              {/* Enhanced Description */}
-              <p className="text-xl md:text-2xl text-blue-100 leading-relaxed max-w-lg">
-                <span className="font-semibold text-white">
-                  Kaihma's AI-powered escrow
-                </span>{" "}
-                guarantees your payments before shipping. Join thousands of
-                African sellers who sleep peacefully knowing their money is{" "}
-                <span className="text-green-300 font-semibold">
-                  always protected
-                </span>
-                .
+              {/* Enhanced Description - Responsive */}
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                The <span className="font-semibold text-white">complete commerce infrastructure</span> that combines store creation, secure payments, delivery tracking, and buyer protection into one powerful platform built for Africa's unique market realities.
               </p>
 
-              {/* Social Proof Stats */}
-              <div className="grid grid-cols-3 gap-6 py-6">
-                {stats.slice(0, 3).map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-white">
-                      {stat.number}
-                    </div>
-                    <div className="text-sm text-blue-200">{stat.label}</div>
-                  </div>
-                ))}
+              {/* Value Props - Responsive Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 lg:gap-4 max-w-md mx-auto lg:mx-0">
+                <div className="flex items-center space-x-2 justify-center lg:justify-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-blue-100">Escrow-Protected Payments</span>
+                </div>
+                <div className="flex items-center space-x-2 justify-center lg:justify-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-blue-100">Built-in Logistics</span>
+                </div>
+                <div className="flex items-center space-x-2 justify-center lg:justify-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-blue-100">Mobile-First Design</span>
+                </div>
+                <div className="flex items-center space-x-2 justify-center lg:justify-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-blue-100">Cross-Border Ready</span>
+                </div>
               </div>
 
-              {/* Enhanced CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group bg-gradient-to-r from-white to-blue-50 text-blue-700 hover:from-blue-50 hover:to-white px-8 py-5 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center relative overflow-hidden">
+              {/* Enhanced CTA Buttons - Responsive Stacking */}
+              <div className="flex flex-col space-y-3 sm:space-y-4 lg:flex-row lg:space-y-0 lg:space-x-4">
+                <button className="group bg-gradient-to-r from-white to-blue-50 text-blue-700 hover:from-blue-50 hover:to-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                  <span className="relative z-10">Start Selling Safely</span>
-                  <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform relative z-10" />
+                  <span className="relative z-10">Start Building Your Store</span>
+                  <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 group-hover:translate-x-1 transition-transform relative z-10" />
                 </button>
 
-                <button className="group border-2 border-white/80 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-5 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center justify-center hover:border-white hover:shadow-lg">
-                  <Play className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
-                  Watch Demo (2 min)
+                <button className="group border-2 border-white/80 text-white hover:bg-white/10 backdrop-blur-sm px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-semibold transition-all duration-300 flex items-center justify-center hover:border-white hover:shadow-lg">
+                  <Play className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 group-hover:scale-110 transition-transform" />
+                  See How It Works
                 </button>
               </div>
 
-              {/* Rotating Testimonial */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <div className="flex items-start space-x-4">
+              {/* Rotating Testimonial - Mobile Optimized */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 border border-white/20 max-w-md mx-auto lg:max-w-none">
+                <div className="flex items-start space-x-3 sm:space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">
-                        {heroTestimonials[currentHeroTestimonial].name.charAt(
-                          0
-                        )}
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-sm sm:text-base lg:text-lg">
+                        {heroTestimonials[currentHeroTestimonial].name.charAt(0)}
                       </span>
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-white/90 text-lg italic mb-2">
+                    <p className="text-white/90 text-sm sm:text-base lg:text-lg italic mb-1 sm:mb-2">
                       "{heroTestimonials[currentHeroTestimonial].text}"
                     </p>
-                    <div className="flex items-center space-x-2">
-                      <p className="text-sm font-semibold text-blue-200">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2">
+                      <p className="text-xs sm:text-sm font-semibold text-blue-200">
                         {heroTestimonials[currentHeroTestimonial].name}
                       </p>
-                      <span className="text-blue-300">•</span>
-                      <p className="text-sm text-blue-300">
+                      <span className="text-blue-300 hidden sm:inline">•</span>
+                      <p className="text-xs sm:text-sm text-blue-300">
                         {heroTestimonials[currentHeroTestimonial].business}
                       </p>
                     </div>
@@ -301,122 +334,94 @@ const Page = () => {
               </div>
             </div>
 
-            {/* Enhanced Hero Visual */}
-            <div className="relative">
-              {/* Main Dashboard Mockup */}
-              <div className="bg-white rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition-transform duration-500 relative z-10">
-                {/* Header */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                      <Shield className="h-6 w-6 text-white" />
+            {/* Enhanced Hero Visual - Mobile Responsive Dashboard */}
+            <div className="relative mt-8 lg:mt-0">
+              {/* Main Commerce Dashboard - Responsive Sizing */}
+              <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl transform hover:scale-105 transition-transform duration-500 relative z-10">
+                {/* Dashboard Header - Responsive */}
+                <div className="flex items-center justify-between mb-4 sm:mb-6">
+                  <div className="flex items-center space-x-2 sm:space-x-3">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                      <Layers className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-gray-900 font-bold text-lg">
-                        Secure Transaction
-                      </h3>
-                      <p className="text-gray-500 text-sm">
-                        Real-time protection
-                      </p>
+                      <h3 className="text-gray-900 font-bold text-sm sm:text-base lg:text-lg">KAIHMA Dashboard</h3>
+                      <p className="text-gray-500 text-xs sm:text-sm">Commerce Operating System</p>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-2 text-green-600 text-sm font-semibold bg-green-50 px-4 py-2 rounded-full">
-                    <CheckCircle className="h-4 w-4" />
-                    <span>Verified & Protected</span>
+                  <div className="flex items-center space-x-1 sm:space-x-2 text-green-600 text-xs sm:text-sm font-semibold bg-green-50 px-2 sm:px-3 lg:px-4 py-1 sm:py-2 rounded-full">
+                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="hidden sm:inline">All Systems Active</span>
+                    <span className="sm:hidden">Active</span>
                   </div>
                 </div>
 
-                {/* Transaction Details */}
-                <div className="space-y-6">
-                  <div className="bg-gray-50 rounded-2xl p-6">
-                    <div className="flex justify-between items-center mb-4">
-                      <span className="text-gray-600 font-medium">
-                        Order Value
-                      </span>
-                      <div className="text-right">
-                        <div className="text-3xl font-black text-gray-900">
-                          ₦{(45000 + (animatedValue % 10000)).toLocaleString()}
-                        </div>
-                        <div className="text-sm text-green-600 font-medium">
-                          +12% from last month
-                        </div>
-                      </div>
+                {/* Dashboard Metrics - Responsive Grid */}
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4 mb-4 sm:mb-6">
+                  <div className="bg-blue-50 rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4">
+                    <div className="flex items-center justify-between mb-1 sm:mb-2">
+                      <Store className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-blue-600" />
+                      <span className="text-xs font-medium text-blue-600">STORES</span>
                     </div>
-
-                    <div className="grid grid-cols-2 gap-4 mb-4">
-                      <div>
-                        <span className="text-gray-500 text-sm">Status</span>
-                        <div className="font-semibold text-gray-900 flex items-center">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                          Funds Secured
-                        </div>
-                      </div>
-                      <div>
-                        <span className="text-gray-500 text-sm">Delivery</span>
-                        <p className="font-semibold text-gray-900">
-                          Confirmed ✓
-                        </p>
-                      </div>
+                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">24</div>
+                    <div className="text-xs text-gray-600">Active stores</div>
+                  </div>
+                  <div className="bg-green-50 rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4">
+                    <div className="flex items-center justify-between mb-1 sm:mb-2">
+                      <Shield className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-green-600" />
+                      <span className="text-xs font-medium text-green-600">ESCROW</span>
                     </div>
+                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">₦{(450 + (animatedValue % 100)).toLocaleString()}k</div>
+                    <div className="text-xs text-gray-600">Protected</div>
+                  </div>
+                </div>
 
-                    {/* Progress Bar */}
-                    <div className="mb-4">
-                      <div className="flex justify-between text-sm text-gray-600 mb-2">
-                        <span>Transaction Progress</span>
-                        <span>Ready to release</span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div className="bg-gradient-to-r from-green-400 to-blue-500 h-2 rounded-full w-full transition-all duration-1000"></div>
-                      </div>
+                {/* Recent Activity - Responsive */}
+                <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+                  <h4 className="text-xs sm:text-sm font-semibold text-gray-700">Recent Activity</h4>
+                  <div className="space-y-1 sm:space-y-2">
+                    <div className="flex items-center space-x-2 sm:space-x-3 p-1.5 sm:p-2 bg-gray-50 rounded-lg">
+                      <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm text-gray-700 truncate">Payment released for Order #1247</span>
+                    </div>
+                    <div className="flex items-center space-x-2 sm:space-x-3 p-1.5 sm:p-2 bg-blue-50 rounded-lg">
+                      <Clock className="h-3 w-3 sm:h-4 sm:w-4 text-blue-500 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm text-gray-700 truncate">New store created: Fashion Hub</span>
+                    </div>
+                    <div className="flex items-center space-x-2 sm:space-x-3 p-1.5 sm:p-2 bg-yellow-50 rounded-lg">
+                      <Truck className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-600 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm text-gray-700 truncate">Delivery in progress: 3 orders</span>
                     </div>
                   </div>
+                </div>
 
-                  {/* Action Button */}
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                    Release Payment Instantly
+                {/* Quick Actions - Responsive */}
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                  <button className="flex items-center justify-center space-x-1 sm:space-x-2 bg-blue-600 text-white py-2 sm:py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    <Store className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="text-xs sm:text-sm font-medium">New Store</span>
                   </button>
-
-                  {/* Security Features */}
-                  <div className="grid grid-cols-3 gap-3 pt-4 border-t">
-                    <div className="text-center">
-                      <Shield className="h-6 w-6 text-blue-500 mx-auto mb-1" />
-                      <p className="text-xs text-gray-600 font-medium">
-                        AI Fraud Detection
-                      </p>
-                    </div>
-                    <div className="text-center">
-                      <CheckCircle className="h-6 w-6 text-green-500 mx-auto mb-1" />
-                      <p className="text-xs text-gray-600 font-medium">
-                        Instant Verification
-                      </p>
-                    </div>
-                    <div className="text-center">
-                      <Users className="h-6 w-6 text-purple-500 mx-auto mb-1" />
-                      <p className="text-xs text-gray-600 font-medium">
-                        24/7 Support
-                      </p>
-                    </div>
-                  </div>
+                  <button className="flex items-center justify-center space-x-1 sm:space-x-2 bg-green-600 text-white py-2 sm:py-3 rounded-lg hover:bg-green-700 transition-colors">
+                    <BarChart3 className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="text-xs sm:text-sm font-medium">Analytics</span>
+                  </button>
                 </div>
               </div>
 
-              {/* Floating Success Notification */}
-              <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg animate-bounce z-20">
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4" />
-                  <span className="text-sm font-semibold">
-                    Payment Secured!
-                  </span>
+              {/* Floating Success Cards - Responsive Positioning */}
+              <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-green-500 text-white px-2 sm:px-3 lg:px-4 py-1 sm:py-2 rounded-lg shadow-lg animate-bounce z-20">
+                <div className="flex items-center space-x-1 sm:space-x-2">
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <span className="text-xs sm:text-sm font-semibold">Store Live!</span>
                 </div>
               </div>
 
-              {/* Floating Stats Cards */}
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl z-20 transform hover:scale-105 transition-transform">
-                <div className="flex items-center space-x-3">
-                  <TrendingUp className="h-8 w-8 text-green-500" />
+              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-white rounded-xl p-2 sm:p-3 lg:p-4 shadow-xl z-20 transform hover:scale-105 transition-transform">
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <TrendingUp className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-blue-500" />
                   <div>
-                    <p className="text-sm text-gray-600">Success Rate</p>
-                    <p className="font-bold text-xl text-gray-900">99.9%</p>
+                    <p className="text-xs sm:text-sm text-gray-600">Monthly Growth</p>
+                    <p className="font-bold text-lg sm:text-xl text-gray-900">+247%</p>
                   </div>
                 </div>
               </div>
@@ -425,53 +430,36 @@ const Page = () => {
         </div>
       </section>
 
-      <section className="bg-white py-12 md:py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
-            <div className="flex">
-              <div className="flex-shrink-0">
-                <svg
-                  className="h-5 w-5 text-red-500"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+      {/* Problem Section - Super Responsive */}
+      <section className="bg-white py-8 sm:py-12 lg:py-16">
+        <div className="max-w-4xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="bg-red-50 border-l-4 border-red-500 p-4 sm:p-6 lg:p-8 rounded-lg">
+            <div className="flex flex-col sm:flex-row">
+              <div className="flex-shrink-0 mb-3 sm:mb-0 sm:mr-4">
+                <Target className="h-5 w-5 sm:h-6 sm:w-6 text-red-500" />
               </div>
-              <div className="ml-3">
-                <h3 className="text-lg font-bold text-red-800 mb-4">
-                  It's 11 PM. Another "customer" just rejected your ₦15,000
-                  delivery.
+              <div className="flex-1">
+                <h3 className="text-xl sm:text-2xl font-bold text-red-800 mb-4 sm:mb-6">
+                  Why Traditional eCommerce Platforms Fail in Africa
                 </h3>
-                <div className="mt-2 text-red-700">
-                  <p className="font-semibold mb-2">
-                    You're losing ₦40k-150k monthly to:
+                <div className="text-red-700 space-y-3 sm:space-y-4">
+                  <p className="font-semibold text-base sm:text-lg mb-3 sm:mb-4">
+                    African entrepreneurs face unique challenges that global platforms ignore:
                   </p>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>Fake buyers who waste your time</li>
-                    <li>POD failures that steal your inventory</li>
-                    <li>
-                      The constant stress of "Will they pay or won't they?"
-                    </li>
-                  </ul>
-                  <div className="mt-4 p-3 bg-red-100 rounded-lg text-center">
-                    <p className="text-2xl font-bold text-red-800">
-                      ₦40k-150k{" "}
-                      <span className="text-lg font-normal">
-                        lost every single month
-                      </span>
-                    </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                    {problemPoints.map((point, index) => (
+                      <div key={index} className="flex items-start space-x-2">
+                        <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-sm sm:text-base">{point}</span>
+                      </div>
+                    ))}
                   </div>
-                  <p className="mt-4 italic">
-                    While you're losing sleep, other sellers sleep peacefully.
-                  </p>
-                  <p className="mt-2 font-bold">
-                    What's the difference? They stopped playing the broken game.
-                  </p>
+                  <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-red-100 rounded-lg text-center">
+                    <p className="text-lg sm:text-xl font-bold text-red-800">
+                      Result: 60%+ of African commerce still happens offline
+                    </p>
+                    <p className="text-xs sm:text-sm mt-2">Not because people don't want to buy online, but because the infrastructure doesn't work.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -479,104 +467,67 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Solution Section - Added after Problem section */}
-      <section className="bg-blue-50 py-12 md:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Meet Kaihma
+      {/* Solution Section - Responsive */}
+      <section className="bg-blue-50 py-8 sm:py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+              Introducing KAIHMA - Built for African Realities
             </h2>
-            <p className="text-xl text-gray-600">
-              The infrastructure that makes POD failures impossible.
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+              The first Commerce Operating System designed from the ground up to solve Africa's unique eCommerce challenges.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <div className="text-blue-600 text-2xl mb-3">1</div>
-              <h3 className="text-xl font-bold mb-2">
-                Customers pay into escrow first
-              </h3>
-              <p className="text-gray-600">
-                No more "I'll pay when I see it" games
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <div className="text-blue-600 text-2xl mb-3">2</div>
-              <h3 className="text-xl font-bold mb-2">
-                Your money is guaranteed
-              </h3>
-              <p className="text-gray-600">Before you even ship the product</p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <div className="text-blue-600 text-2xl mb-3">3</div>
-              <h3 className="text-xl font-bold mb-2">
-                Zero rejected deliveries
-              </h3>
-              <p className="text-gray-600">
-                The system won't allow it to happen
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <div className="text-blue-600 text-2xl mb-3">4</div>
-              <h3 className="text-xl font-bold mb-2">Build customer trust</h3>
-              <p className="text-gray-600">
-                Verified seller status increases conversions
-              </p>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+            {solutionSteps.map((step, index) => (
+              <div key={index} className="bg-white p-4 sm:p-6 rounded-xl shadow-md text-center">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mb-3 sm:mb-4 mx-auto">
+                  {step.step}
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 text-sm sm:text-base">
+                  {step.description}
+                </p>
+              </div>
+            ))}
           </div>
 
-          <div className="mt-12 bg-white rounded-xl shadow-lg p-6 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-center mb-6">
-              Proof It Works
+          {/* Core Differentiator - Responsive */}
+          <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 text-center">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
+              We're Not Building an African Shopify
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="border-l-4 border-blue-500 pl-4">
-                <p className="text-gray-600">Was losing ₦80k/month</p>
-                <p className="text-lg font-bold">
-                  → Now makes ₦450k with zero rejections
-                </p>
-                <p className="text-sm text-gray-500 mt-1">- Adunni, Ibadan</p>
-              </div>
-              <div className="border-l-4 border-blue-500 pl-4">
-                <p className="text-gray-600">Couldn't sleep from stress</p>
-                <p className="text-lg font-bold">
-                  → Processes 50+ orders weekly worry-free
-                </p>
-                <p className="text-sm text-gray-500 mt-1">- Samuel, Lagos</p>
-              </div>
-              <div className="border-l-4 border-blue-500 pl-4">
-                <p className="text-gray-600">Ready to quit selling online</p>
-                <p className="text-lg font-bold">
-                  → Just hired her second employee
-                </p>
-                <p className="text-sm text-gray-500 mt-1">- Victory, Abuja</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 bg-red-100 border-l-4 border-red-500 p-6 rounded-lg max-w-2xl mx-auto">
-            <h3 className="text-xl font-bold text-red-800 mb-3">
-              The Cost of Waiting
-            </h3>
-            <p className="text-red-700 font-semibold">
-              Every day: ₦1,300-5,000 lost to these problems
+            <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 max-w-3xl mx-auto px-2">
+              We're writing a new playbook — one where <strong>trust is built-in, not assumed</strong>. 
+              KAIHMA provides the complete commerce stack: store, payments, delivery, and trust infrastructure.
             </p>
+            <div className="flex justify-center">
+              <div className="bg-blue-100 px-4 sm:px-6 py-2 sm:py-3 rounded-full">
+                <span className="text-blue-800 font-semibold text-sm sm:text-base">Commerce Operating System</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-white py-16 -mt-16 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      {/* Stats Section - Super Responsive */}
+      <section className="bg-white py-8 sm:py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 text-white">
+            <div className="text-center mb-6 sm:mb-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-2">KAIHMA By The Numbers</h3>
+              <p className="text-blue-100 text-sm sm:text-base">Powering the future of African commerce</p>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                  <div className="text-blue-100 font-medium text-xs sm:text-sm lg:text-base">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -584,33 +535,33 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              How Kaihma Protects Sellers
+      {/* Core Features Section - Responsive Grid */}
+      <section className="py-10 sm:py-16 lg:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+              Everything You Need in One Platform
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The escrow system that eliminates payment rejections and fraud
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+              KAIHMA combines all essential commerce tools into a unified operating system designed for African markets.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+            {coreFeatures.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1"
+                  className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1"
                 >
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-blue-600" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+                    <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <p className="text-gray-600 text-sm sm:text-base">{feature.description}</p>
                 </div>
               );
             })}
@@ -618,40 +569,40 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Who Uses Kaihma?
+      {/* Services Deep Dive - Mobile First Layout */}
+      <section className="py-10 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+              Complete Commerce Infrastructure
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Any seller who's tired of losing money to payment scams
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+              From store creation to payment processing, KAIHMA handles every aspect of your online business.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100 hover:shadow-xl transition-all duration-200"
+                  className="bg-gradient-to-br from-blue-50 to-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-blue-100 hover:shadow-xl transition-all duration-200"
                 >
-                  <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
-                    <Icon className="h-8 w-8 text-white" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                    <Icon className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 mb-6">{service.description}</p>
-                  <ul className="space-y-2">
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">{service.description}</p>
+                  <ul className="space-y-2 sm:space-y-3">
                     {service.features.map((feature, featureIndex) => (
                       <li
                         key={featureIndex}
-                        className="flex items-center text-gray-700"
+                        className="flex items-center text-gray-700 text-sm sm:text-base"
                       >
-                        <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 mr-2 sm:mr-3 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
@@ -663,90 +614,88 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
+      {/* Testimonials Section - Super Mobile Friendly */}
+      <section className="py-8 sm:py-12 lg:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-16">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4">
               Real Sellers, Real Results
             </h2>
-            <p className="text-base md:text-xl text-gray-600">
+            <p className="text-sm sm:text-base lg:text-xl text-gray-600">
               African sellers who stopped losing money with Kaihma
             </p>
           </div>
 
-          {/* Testimonial Carousel */}
+          {/* Testimonial Carousel - Enhanced Mobile Experience */}
           <div className="relative max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg md:shadow-xl relative overflow-hidden">
+            <div className="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg lg:shadow-xl relative overflow-hidden">
               {/* Navigation Buttons - Hidden on mobile, shown on md+ */}
               <button
                 onClick={prevTestimonial}
-                className="hidden md:flex absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-blue-100 hover:bg-blue-200 rounded-full items-center justify-center transition-colors z-10"
+                className="hidden md:flex absolute left-2 lg:left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 lg:w-10 lg:h-10 bg-blue-100 hover:bg-blue-200 rounded-full items-center justify-center transition-colors z-10"
               >
-                <ChevronLeft className="h-5 w-5 text-blue-600" />
+                <ChevronLeft className="h-4 w-4 lg:h-5 lg:w-5 text-blue-600" />
               </button>
               <button
                 onClick={nextTestimonial}
-                className="hidden md:flex absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-blue-100 hover:bg-blue-200 rounded-full items-center justify-center transition-colors z-10"
+                className="hidden md:flex absolute right-2 lg:right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 lg:w-10 lg:h-10 bg-blue-100 hover:bg-blue-200 rounded-full items-center justify-center transition-colors z-10"
               >
-                <ChevronRight className="h-5 w-5 text-blue-600" />
+                <ChevronRight className="h-4 w-4 lg:h-5 lg:w-5 text-blue-600" />
               </button>
 
-              {/* Testimonial Content */}
-              <div className="text-center px-4 sm:px-8 md:px-16">
-                <div className="flex justify-center mb-4 md:mb-6">
+              {/* Testimonial Content - Mobile Optimized */}
+              <div className="text-center px-2 sm:px-4 md:px-8 lg:px-16">
+                <div className="flex justify-center mb-3 sm:mb-4 lg:mb-6">
                   {[...Array(testimonials[currentTestimonial].rating)].map(
                     (_, i) => (
                       <Star
                         key={i}
-                        className="h-5 w-5 md:h-6 md:w-6 text-yellow-400 fill-current"
+                        className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-yellow-400 fill-current"
                       />
                     )
                   )}
                 </div>
 
-                <p className="text-base md:text-xl text-gray-700 mb-6 md:mb-8 italic leading-relaxed">
+                <p className="text-sm sm:text-base lg:text-xl text-gray-700 mb-4 sm:mb-6 lg:mb-8 italic leading-relaxed">
                   "{testimonials[currentTestimonial].content}"
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                  <div className="text-center sm:text-left">
-                    <div className="font-bold text-gray-900 text-md md:text-lg">
-                      {testimonials[currentTestimonial].name}
-                    </div>
-                    <div className="text-gray-600 text-sm md:text-base">
-                      {testimonials[currentTestimonial].role}
-                    </div>
-                    <div className="text-blue-600 text-xs md:text-sm font-medium">
-                      {testimonials[currentTestimonial].location}
-                    </div>
+                <div className="flex flex-col items-center space-y-2 sm:space-y-1">
+                  <div className="font-bold text-gray-900 text-sm sm:text-base lg:text-lg">
+                    {testimonials[currentTestimonial].name}
+                  </div>
+                  <div className="text-gray-600 text-xs sm:text-sm lg:text-base">
+                    {testimonials[currentTestimonial].role}
+                  </div>
+                  <div className="text-blue-600 text-xs sm:text-sm font-medium">
+                    {testimonials[currentTestimonial].location}
                   </div>
                 </div>
               </div>
 
-              {/* Mobile Navigation Buttons - Shown only on mobile */}
-              <div className="flex md:hidden justify-between mt-6">
+              {/* Mobile Navigation Buttons - Touch Friendly */}
+              <div className="flex md:hidden justify-center space-x-4 mt-6">
                 <button
                   onClick={prevTestimonial}
-                  className="w-12 h-12 bg-blue-100 hover:bg-blue-200 rounded-full flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-blue-100 hover:bg-blue-200 rounded-full flex items-center justify-center transition-colors active:scale-95"
                 >
                   <ChevronLeft className="h-5 w-5 text-blue-600" />
                 </button>
                 <button
                   onClick={nextTestimonial}
-                  className="w-12 h-12 bg-blue-100 hover:bg-blue-200 rounded-full flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-blue-100 hover:bg-blue-200 rounded-full flex items-center justify-center transition-colors active:scale-95"
                 >
                   <ChevronRight className="h-5 w-5 text-blue-600" />
                 </button>
               </div>
 
-              {/* Indicators */}
-              <div className="flex justify-center mt-6 md:mt-8 space-x-2">
+              {/* Indicators - Touch Optimized */}
+              <div className="flex justify-center mt-4 sm:mt-6 lg:mt-8 space-x-2">
                 {testimonials.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentTestimonial(index)}
-                    className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-colors ${
+                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors ${
                       index === currentTestimonial
                         ? "bg-blue-600"
                         : "bg-gray-300"
@@ -759,79 +708,61 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Mobile App Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* App Screenshot */}
-            <div className="order-2 lg:order-1 flex justify-center">
-              <div className="relative">
-                {/* iPhone Mockup */}
-
-                {/* Android Phone Floating Next to iPhone */}
-                <div className="absolute -bottom-16 -right-16 w-56 h-auto">
-                  <div className="absolute inset-0 flex items-center justify-center p-3">
-                    <img
-                      src="/images/logo.jpg" // Your app screenshot
-                      alt="App Preview"
-                      className="rounded-lg shadow-lg"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* App Content */}
-            <div className="order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+      {/* Mobile App Section - Responsive Layout */}
+      <section className="py-10 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* App Content - Mobile First */}
+            <div className="order-1 text-center lg:text-left">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Manage Transactions On The Go
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
                 Our mobile app gives you full control over your escrow payments,
                 order tracking, and buyer communication - all from your
                 smartphone.
               </p>
 
-              <div className="space-y-6 mb-8">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-blue-100 rounded-lg p-2 mr-4">
-                    <CheckCircle className="h-6 w-6 text-blue-600" />
+              <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
+                <div className="flex items-start text-left">
+                  <div className="flex-shrink-0 bg-blue-100 rounded-lg p-2 mr-3 sm:mr-4">
+                    <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">
                       Real-time Notifications
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 text-sm sm:text-base">
                       Get instant alerts when payments are secured or orders are
                       completed.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-blue-100 rounded-lg p-2 mr-4">
-                    <CheckCircle className="h-6 w-6 text-blue-600" />
+                <div className="flex items-start text-left">
+                  <div className="flex-shrink-0 bg-blue-100 rounded-lg p-2 mr-3 sm:mr-4">
+                    <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">
                       Secure Mobile Payments
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 text-sm sm:text-base">
                       Approve or release funds with biometric authentication for
                       extra security.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-blue-100 rounded-lg p-2 mr-4">
-                    <CheckCircle className="h-6 w-6 text-blue-600" />
+                <div className="flex items-start text-left">
+                  <div className="flex-shrink-0 bg-blue-100 rounded-lg p-2 mr-3 sm:mr-4">
+                    <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">
                       Offline Mode
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 text-sm sm:text-base">
                       Check order statuses even when you're offline - updates
                       sync when you reconnect.
                     </p>
@@ -839,14 +770,14 @@ const Page = () => {
                 </div>
               </div>
 
-              {/* App Download Buttons */}
-              <div className="flex flex-wrap gap-4">
+              {/* App Download Buttons - Mobile Optimized */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <a
                   href="#"
-                  className="flex items-center bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-lg transition-colors"
+                  className="flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white px-4 sm:px-6 py-3 rounded-lg transition-colors active:scale-95"
                 >
                   <svg
-                    className="w-5 h-5 mr-3"
+                    className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -854,7 +785,7 @@ const Page = () => {
                   </svg>
                   <div className="text-left">
                     <div className="text-xs">Download on the</div>
-                    <div className="text-xl font-semibold leading-none">
+                    <div className="text-base sm:text-xl font-semibold leading-none">
                       App Store
                     </div>
                   </div>
@@ -862,10 +793,10 @@ const Page = () => {
 
                 <a
                   href="#"
-                  className="flex items-center bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-lg transition-colors"
+                  className="flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white px-4 sm:px-6 py-3 rounded-lg transition-colors active:scale-95"
                 >
                   <svg
-                    className="w-5 h-5 mr-3"
+                    className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -873,42 +804,42 @@ const Page = () => {
                   </svg>
                   <div className="text-left">
                     <div className="text-xs">Get it on</div>
-                    <div className="text-xl font-semibold leading-none">
+                    <div className="text-base sm:text-xl font-semibold leading-none">
                       Google Play
                     </div>
                   </div>
                 </a>
               </div>
             </div>
+
+            
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+      {/* CTA Section - Super Responsive */}
+      <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-10 sm:py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">
             Stop Losing Money Today
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
             Join 1,353 sellers who've already protected their income with
             Kaihma's escrow system. Limited spots available - next batch opens
             Q2 2025.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 transform hover:scale-105">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md mx-auto">
+            <button className="bg-white text-blue-600 hover:bg-blue-50 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95">
               Claim Your Spot
             </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200">
+            <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-200 active:scale-95">
               See Pricing
             </button>
           </div>
         </div>
       </section>
-
-      
     </div>
   );
 };
 
-export default Page;
+export default KaihmaLanding;
