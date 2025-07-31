@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { ArrowRight, Eye, EyeOff, Shield, Store, Truck, CreditCard } from 'lucide-react';
+import { ArrowRight, Eye, EyeOff, Shield, Store, Truck, CreditCard, X } from 'lucide-react';
 import Link from 'next/link';
 
 const LoginPage = () => {
@@ -12,6 +12,10 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [showForgotPasswordModal, setShowForgotPasswordModal] = useState(false);
+  const [forgotPasswordEmail, setForgotPasswordEmail] = useState('');
+  const [forgotPasswordError, setForgotPasswordError] = useState('');
+  const [forgotPasswordSuccess, setForgotPasswordSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -40,6 +44,29 @@ const LoginPage = () => {
         setIsSubmitting(false);
       }, 2000);
     }
+  };
+
+  const handleForgotPasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!forgotPasswordEmail) {
+      setForgotPasswordError('Email is required');
+      return;
+    }
+    
+    // Reset error and success states
+    setForgotPasswordError('');
+    setForgotPasswordSuccess(false);
+    
+    // Simulate API call
+    setTimeout(() => {
+      setForgotPasswordSuccess(true);
+      // Auto-close after 3 seconds
+      setTimeout(() => {
+        setShowForgotPasswordModal(false);
+        setForgotPasswordEmail('');
+        setForgotPasswordSuccess(false);
+      }, 3000);
+    }, 1500);
   };
 
   return (
@@ -112,9 +139,13 @@ const LoginPage = () => {
               </div>
 
               <div className="text-sm">
-                <Link href="/forgot-password" className="text-blue-600 font-medium hover:underline">
+                <button 
+                  type="button" 
+                  onClick={() => setShowForgotPasswordModal(true)}
+                  className="text-blue-600 font-medium hover:underline"
+                >
                   Forgot password?
-                </Link>
+                </button>
               </div>
             </div>
 
@@ -195,6 +226,72 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Forgot Password Modal */}
+      {showForgotPasswordModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg shadow-xl w-full max-w-md">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl font-bold text-gray-900">Reset Password</h3>
+                <button 
+                  onClick={() => {
+                    setShowForgotPasswordModal(false);
+                    setForgotPasswordEmail('');
+                    setForgotPasswordError('');
+                    setForgotPasswordSuccess(false);
+                  }}
+                  className="text-gray-400 hover:text-gray-500"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+
+              {forgotPasswordSuccess ? (
+                <div className="text-center py-4">
+                  <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+                    <svg className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">Email Sent!</h3>
+                  <p className="text-sm text-gray-500">
+                    We've sent a password reset link to {forgotPasswordEmail}. Please check your inbox.
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <p className="text-sm text-gray-600 mb-4">
+                    Enter your email address and we'll send you a link to reset your password.
+                  </p>
+                  <form onSubmit={handleForgotPasswordSubmit}>
+                    <div className="mb-4">
+                      <label htmlFor="forgot-email" className="block text-sm font-medium text-gray-700 mb-1">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        id="forgot-email"
+                        value={forgotPasswordEmail}
+                        onChange={(e) => setForgotPasswordEmail(e.target.value)}
+                        className={`w-full px-4 py-3 border ${forgotPasswordError ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent`}
+                        placeholder="your@business.com"
+                      />
+                      {forgotPasswordError && <p className="mt-1 text-sm text-red-600">{forgotPasswordError}</p>}
+                    </div>
+                    <button
+                      type="submit"
+                      className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200"
+                    >
+                      Send Reset Link
+                    </button>
+                  </form>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
