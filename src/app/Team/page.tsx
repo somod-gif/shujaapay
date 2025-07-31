@@ -19,7 +19,12 @@ import {
   CreditCard,
   Package,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Store,
+  Truck,
+  BarChart2,
+  ShoppingCart,
+  Box
 } from 'lucide-react';
 
 const leadershipTeam = [
@@ -27,8 +32,8 @@ const leadershipTeam = [
     name: "Oluwaseun Adebayo",
     role: "CEO & Co-Founder",
     email: "oluwaseun@kaihma.com",
-    bio: "Oluwaseun founded Kaihma after losing ₦150k to fake buyers in his e-commerce business. With 10+ years in African fintech, he's driven to eliminate payment fraud for sellers across the continent.",
-    expertise: ["E-commerce", "Payment Security", "Market Expansion"],
+    bio: "Oluwaseun founded KAIHMA after identifying the infrastructure gaps in African e-commerce. With 10+ years building pan-African commerce solutions, he's driven to create an operating system that empowers businesses across the continent.",
+    expertise: ["E-commerce Infrastructure", "Cross-border Payments", "Market Expansion"],
     experience: "10+ years",
     location: "Lagos, Nigeria",
     social: {
@@ -36,7 +41,7 @@ const leadershipTeam = [
       twitter: "#"
     },
     achievements: [
-      "Built Africa's first seller-focused escrow system",
+      "Built Africa's first Commerce Operating System",
       "Featured in TechCabal's Fintech 50",
       "Speaker at Africa Money & DeFi Summit"
     ]
@@ -45,8 +50,8 @@ const leadershipTeam = [
     name: "Amina Mohammed",
     role: "CTO & Co-Founder",
     email: "amina@kaihma.com",
-    bio: "Amina leads Kaihma's technical vision, ensuring our escrow system provides ironclad protection for sellers. She specializes in secure payment architectures that prevent fraud while maintaining seamless user experiences.",
-    expertise: ["Payment Systems", "Fraud Prevention", "API Security"],
+    bio: "Amina leads KAIHMA's technical vision, architecting the integrated systems that power our Commerce OS. She specializes in building scalable infrastructure for Africa's unique market needs.",
+    expertise: ["Payment Systems", "Logistics Tech", "API Architecture"],
     experience: "8+ years",
     location: "Nairobi, Kenya",
     social: {
@@ -54,9 +59,9 @@ const leadershipTeam = [
       twitter: "#"
     },
     achievements: [
-      "Developed anti-fraud algorithms with 99.8% accuracy",
-      "Built systems processing ₦500M+ in escrow",
-      "Fintech security patent holder"
+      "Developed Africa-first commerce APIs",
+      "Built systems processing ₦2B+ monthly",
+      "Fintech infrastructure patent holder"
     ]
   }
 ];
@@ -64,10 +69,10 @@ const leadershipTeam = [
 const coreTeam = [
   {
     name: "Kwame Mensah",
-    role: "Head of Growth",
-    department: "Growth",
-    bio: "Kwame drives adoption of Kaihma's escrow protection across African markets, helping thousands of sellers secure their payments.",
-    expertise: ["Business Development", "Partnerships"],
+    role: "Head of Logistics",
+    department: "Operations",
+    bio: "Kwame builds the delivery networks that power KAIHMA's integrated logistics across 15+ African countries.",
+    expertise: ["Last-mile Delivery", "Cross-border Logistics"],
     experience: "7+ years",
     location: "Accra, Ghana"
   },
@@ -75,8 +80,8 @@ const coreTeam = [
     name: "Ngozi Eze",
     role: "Head of Seller Success",
     department: "Customer Experience",
-    bio: "Ngozi ensures our sellers maximize Kaihma's protection features, providing education and support to grow their businesses safely.",
-    expertise: ["Customer Success", "E-commerce"],
+    bio: "Ngozi ensures African businesses maximize KAIHMA's Commerce OS, providing education and support for growth.",
+    expertise: ["Seller Growth", "Market Education"],
     experience: "6+ years",
     location: "Abuja, Nigeria"
   },
@@ -84,17 +89,17 @@ const coreTeam = [
     name: "David Kimani",
     role: "Head of Engineering",
     department: "Technology",
-    bio: "David leads the team building Kaihma's escrow infrastructure, ensuring reliability and security for every transaction.",
+    bio: "David leads the team building KAIHMA's Commerce OS infrastructure, ensuring reliability across African markets.",
     expertise: ["Payment Systems", "Fraud Detection"],
     experience: "9+ years",
     location: "Nairobi, Kenya"
   },
   {
     name: "Fatima Diallo",
-    role: "Head of Risk",
-    department: "Security",
-    bio: "Fatima develops systems to detect and prevent payment fraud before it happens, protecting both buyers and sellers.",
-    expertise: ["Risk Management", "Fraud Prevention"],
+    role: "Head of Partnerships",
+    department: "Business Development",
+    bio: "Fatima develops strategic alliances with payment processors and logistics providers across Africa.",
+    expertise: ["Strategic Alliances", "Market Expansion"],
     experience: "8+ years",
     location: "Dakar, Senegal"
   }
@@ -119,73 +124,74 @@ const TeamPage = () => {
     if (!autoPlay) return;
     const interval = setInterval(() => {
       setCurrentCoreMember((prev) => (prev + 1) % coreTeam.length);
-    }, 6000); // Change every 6 seconds
+    }, 6000);
     return () => clearInterval(interval);
   }, [autoPlay, coreTeam.length]);
 
   const companyValues = [
     {
-      icon: Shield,
-      title: "Seller Protection",
-      description: "We exist to protect African sellers from payment fraud",
+      icon: Store,
+      title: "Commerce First",
+      description: "We build solutions that solve real African commerce problems",
       color: "text-blue-600"
     },
     {
-      icon: Heart,
-      title: "Trust Builder",
-      description: "We create confidence between buyers and sellers",
-      color: "text-red-600"
-    },
-    {
-      icon: Target,
-      title: "Impact Driven",
-      description: "We measure success by the businesses we help grow",
+      icon: Globe,
+      title: "Pan-African",
+      description: "We design for the diversity of Africa's markets",
       color: "text-green-600"
     },
     {
+      icon: Target,
+      title: "Infrastructure Mindset",
+      description: "We create the foundational systems African businesses need",
+      color: "text-purple-600"
+    },
+    {
       icon: Zap,
-      title: "Relentless Execution",
-      description: "We deliver solutions that actually work for African sellers",
+      title: "Integrated Solutions",
+      description: "We combine payments, logistics and trust into one platform",
       color: "text-yellow-600"
     }
   ];
 
   const teamStats = [
-    { value: "20+", label: "Team Members", icon: Users },
-    { value: "5", label: "Countries", icon: Globe },
-    { value: "0", label: "Payment Rejections", icon: CheckCircle },
-    { value: "₦500M+", label: "In Escrow", icon: CreditCard }
+    { value: "20+", label: "African Experts", icon: Users },
+    { value: "15+", label: "Countries Covered", icon: Globe },
+    { value: "₦2B+", label: "Monthly GMV", icon: CreditCard },
+    { value: "10K+", label: "Businesses Served", icon: Store }
   ];
 
   const benefits = [
     "Competitive salary and equity packages",
     "Health insurance for you and your family",
     "Flexible remote-first work environment",
-    "Continual learning budget for your growth"
+    "Continual learning budget for your growth",
+    "Opportunity to build Africa's commerce future"
   ];
 
   const nextLeader = () => {
     setCurrentLeader((prev) => (prev + 1) % leadershipTeam.length);
     setAutoPlay(false);
-    setTimeout(() => setAutoPlay(true), 10000); // Re-enable autoplay after 10 seconds
+    setTimeout(() => setAutoPlay(true), 10000);
   };
 
   const prevLeader = () => {
     setCurrentLeader((prev) => (prev - 1 + leadershipTeam.length) % leadershipTeam.length);
     setAutoPlay(false);
-    setTimeout(() => setAutoPlay(true), 10000); // Re-enable autoplay after 10 seconds
+    setTimeout(() => setAutoPlay(true), 10000);
   };
 
   const nextCoreMember = () => {
     setCurrentCoreMember((prev) => (prev + 1) % coreTeam.length);
     setAutoPlay(false);
-    setTimeout(() => setAutoPlay(true), 10000); // Re-enable autoplay after 10 seconds
+    setTimeout(() => setAutoPlay(true), 10000);
   };
 
   const prevCoreMember = () => {
     setCurrentCoreMember((prev) => (prev - 1 + coreTeam.length) % coreTeam.length);
     setAutoPlay(false);
-    setTimeout(() => setAutoPlay(true), 10000); // Re-enable autoplay after 10 seconds
+    setTimeout(() => setAutoPlay(true), 10000);
   };
 
   return (
@@ -195,13 +201,13 @@ const TeamPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center bg-blue-500/20 rounded-full px-4 py-2 mb-6">
-              <span className="text-blue-100 text-sm font-medium">🚀 Trusted by African sellers</span>
+              <span className="text-blue-100 text-sm font-medium">🚀 The Commerce OS for Africa</span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
-              The Kaihma Team
+              The KAIHMA Team
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
-              We're building the trust infrastructure for African e-commerce, protecting sellers from payment fraud through our escrow system.
+              We're building Africa's Commerce Operating System - integrating payments, logistics and trust to power the continent's digital economy.
             </p>
           </div>
         </div>
@@ -237,7 +243,7 @@ const TeamPage = () => {
               Leadership Team
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              The visionaries creating Africa's most trusted payment protection for sellers
+              The visionaries creating Africa's Commerce Operating System
             </p>
           </div>
 
@@ -355,7 +361,7 @@ const TeamPage = () => {
               Core Team
             </h2>
             <p className="text-lg sm:text-xl text-gray-600">
-              The experts building and scaling Kaihma's escrow protection
+              The experts building Africa's Commerce Operating System
             </p>
           </div>
 
@@ -442,7 +448,7 @@ const TeamPage = () => {
               Our Values
             </h2>
             <p className="text-lg sm:text-xl text-gray-600">
-              What drives us to protect African sellers every day
+              What drives us to build Africa's Commerce OS
             </p>
           </div>
 
@@ -472,18 +478,21 @@ const TeamPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center text-white mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-              Join Our Mission
+              Help Build Africa's Commerce Future
             </h2>
             <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto">
-              Help us build the trust infrastructure for African e-commerce
+              We're looking for passionate Africans to join our mission
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
-            {/* Benefits */}
+
+          {/* Benefits */}
+
+          {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+            
             <div className="bg-white rounded-2xl p-6 sm:p-8">
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
-                Why Join Kaihma?
+                Why Join KAIHMA?
               </h3>
               <div className="space-y-3 sm:space-y-4">
                 {benefits.map((benefit, index) => (
@@ -498,9 +507,7 @@ const TeamPage = () => {
             </div>
 
             
-          </div>
-
-          
+          </div> */}
         </div>
       </section>
     </div>

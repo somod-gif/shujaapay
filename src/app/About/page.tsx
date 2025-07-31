@@ -19,7 +19,13 @@ import {
   Lock,
   CreditCard,
   Package,
-  BadgeCheck
+  BadgeCheck,
+  Store,
+  Truck,
+  BarChart2,
+  Globe2,
+  ShoppingCart,
+  Box
 } from 'lucide-react';
 
 const AboutUsPage = () => {
@@ -29,90 +35,90 @@ const AboutUsPage = () => {
     {
       icon: Target,
       title: "Our Mission",
-      description: "To eliminate payment fraud in African e-commerce by creating trusted transactions through our escrow protection system."
+      description: "To make eCommerce actually work in Africa by solving core infrastructure challenges."
     },
     {
       icon: Shield,
-      title: "Security",
-      description: "We guarantee payment security before shipment, ensuring sellers never lose money to fake buyers again."
+      title: "Trust Infrastructure",
+      description: "Building confidence between buyers and sellers across African markets."
     },
     {
-      icon: Heart,
-      title: "Trust",
-      description: "Building confidence between buyers and sellers through transparent, guaranteed transactions."
+      icon: Store,
+      title: "Commerce OS",
+      description: "Creating an all-in-one operating system for African online businesses."
     },
     {
       icon: TrendingUp,
       title: "Growth",
-      description: "Empowering African businesses to scale by removing the risk of payment rejections and fraud."
+      description: "Empowering African entrepreneurs to scale beyond borders."
     }
   ];
 
   const problems = [
-    "Sellers losing ₦40k-150k monthly to fake buyers and POD rejections",
-    "Lack of trust between online buyers and sellers",
-    "Cashflow uncertainty due to payment delays and fraud",
-    "Limited options for secure payment protection"
+    "60%+ of Africa's commerce still happens offline due to trust issues",
+    "Cross-border payments are complex and unreliable",
+    "Logistics infrastructure is broken or non-existent",
+    "No integrated solutions for African market realities"
   ];
 
   const solutions = [
-    "Escrow payment protection before shipping",
-    "Guaranteed payments for sellers",
-    "Zero rejected deliveries system",
-    "Pan-African coverage with local payment options"
+    "Complete Commerce Operating System (Commerce OS)",
+    "Built-in escrow and payment protection",
+    "Integrated logistics and delivery tracking",
+    "Mobile-first platform optimized for African users"
   ];
 
   const stats = [
-    { value: "1,500+", label: "Protected Sellers", icon: Users },
-    { value: "₦500M+", label: "In Escrow", icon: CreditCard },
-    { value: "0", label: "Payment Rejections", icon: BadgeCheck },
-    { value: "5+", label: "Countries Supported", icon: Globe }
+    { value: "10K+", label: "African Sellers", icon: Users },
+    { value: "₦2B+", label: "Monthly GMV", icon: CreditCard },
+    { value: "15+", label: "Countries Supported", icon: Globe },
+    { value: "98%", label: "Delivery Success Rate", icon: BadgeCheck }
   ];
 
   const teamMembers = [
     {
       name: "Oluwaseun Adebayo",
       role: "CEO & Co-Founder",
-      bio: "10+ years in African e-commerce and payment solutions"
+      bio: "Pioneer in African e-commerce infrastructure with 10+ years experience"
     },
     {
       name: "Amina Mohammed", 
       role: "CTO & Co-Founder",
-      bio: "Fintech security expert specializing in escrow systems"
+      bio: "Built payment systems serving 5M+ Africans across borders"
     },
     {
       name: "Kwame Mensah",
-      role: "Head of Growth",
-      bio: "Driving adoption of secure payments across African markets"
+      role: "Head of Logistics",
+      bio: "Created last-mile delivery networks in 8 African countries"
     },
     {
       name: "Ngozi Eze",
       role: "Head of Seller Success",
-      bio: "Dedicated to helping sellers maximize their online business"
+      bio: "Helped 5,000+ African businesses move online successfully"
     }
   ];
 
   const testimonials = [
     {
       name: "Adunni Okafor",
-      role: "Fashion Store Owner",
-      company: "Lagos, Nigeria",
+      role: "Fashion Entrepreneur",
+      company: "Lagos, Nigeria → Nairobi, Kenya",
       rating: 5,
-      text: "Kaihma saved me from losing ₦80k monthly to fake buyers. Now I process ₦450k monthly with zero rejections!"
+      text: "KAIHMA helped me expand to Kenya without worrying about payments or logistics. My cross-border sales grew 300% in 6 months!"
     },
     {
       name: "Samuel Maina",
-      role: "Freelance Developer",
-      company: "Nairobi, Kenya",
+      role: "Electronics Wholesaler",
+      company: "Nairobi, Kenya → Accra, Ghana",
       rating: 5,
-      text: "I was stressed about client payments until Kaihma. Now I handle 50+ orders weekly worry-free."
+      text: "The integrated logistics and escrow gave me confidence to sell across borders. My business now operates in 3 countries."
     },
     {
-      name: "Victory Eze",
-      role: "Dropshipper",
-      company: "Abuja, Nigeria",
+      name: "Ama Mensah",
+      role: "Handmade Goods",
+      company: "Accra, Ghana → Lagos, Nigeria",
       rating: 5,
-      text: "I was ready to quit e-commerce until Kaihma. The escrow system helped me scale and hire my second employee."
+      text: "Before KAIHMA, cross-border selling was impossible. Now I have customers in 5 countries with guaranteed payments."
     }
   ];
 
@@ -131,16 +137,16 @@ const AboutUsPage = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center bg-blue-500/20 rounded-full px-4 py-2 mb-6">
-              <span className="text-blue-100 text-sm font-medium">🚀 Trusted by African sellers</span>
+              <span className="text-blue-100 text-sm font-medium">🚀 The Commerce OS for Africa</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              About Kaihma
+              About KAIHMA
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
-              We're building the trust infrastructure for African e-commerce, eliminating payment fraud and rejected deliveries through our escrow protection system.
+              We're building Africa's Commerce Operating System - integrating payments, logistics and trust to power the continent's digital economy.
             </p>
             <button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg flex items-center justify-center mx-auto">
-              Get Started Free
+              Start Selling
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
           </div>
@@ -179,17 +185,17 @@ const AboutUsPage = () => {
               </h2>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Kaihma was born from our founders' frustration with losing money to fake buyers and payment-on-delivery rejections. As former online sellers ourselves, we experienced firsthand the pain of unreliable payments.
+                  KAIHMA was founded in 2022 by African entrepreneurs who experienced firsthand the challenges of building online businesses on the continent. We realized existing platforms weren't built for Africa's unique realities.
                 </p>
                 <p>
-                  In 2022, we set out to solve this problem by creating Africa's first seller-focused escrow system. Our solution ensures sellers get paid before shipping, while giving buyers confidence their money is protected.
+                  Our vision was to create more than just another eCommerce platform - but a complete Commerce Operating System that solves the fundamental infrastructure gaps holding African businesses back.
                 </p>
                 <p>
-                  Today, we're proud to protect over 1,500 African sellers from payment fraud, securing ₦500M+ in transactions with zero rejected deliveries. Our mission is to make e-commerce safer for every African business.
+                  Today, KAIHMA powers thousands of businesses across 15+ African countries, processing millions in transactions monthly through our integrated storefronts, payments, and logistics solutions.
                 </p>
               </div>
               <button className="mt-8 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center group">
-                How Escrow Protection Works
+                How Our Commerce OS Works
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -197,20 +203,20 @@ const AboutUsPage = () => {
               <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl p-8 shadow-xl">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white rounded-xl p-4 shadow-md">
-                    <Shield className="h-8 w-8 text-blue-600 mb-2" />
-                    <div className="text-sm font-semibold text-gray-900">Payment Guarantee</div>
-                  </div>
-                  <div className="bg-white rounded-xl p-4 shadow-md">
-                    <Package className="h-8 w-8 text-blue-600 mb-2" />
-                    <div className="text-sm font-semibold text-gray-900">Zero Rejections</div>
+                    <Store className="h-8 w-8 text-blue-600 mb-2" />
+                    <div className="text-sm font-semibold text-gray-900">Store Builder</div>
                   </div>
                   <div className="bg-white rounded-xl p-4 shadow-md">
                     <CreditCard className="h-8 w-8 text-blue-600 mb-2" />
-                    <div className="text-sm font-semibold text-gray-900">Escrow Protection</div>
+                    <div className="text-sm font-semibold text-gray-900">Escrow Payments</div>
                   </div>
                   <div className="bg-white rounded-xl p-4 shadow-md">
-                    <Zap className="h-8 w-8 text-blue-600 mb-2" />
-                    <div className="text-sm font-semibold text-gray-900">Instant Payouts</div>
+                    <Truck className="h-8 w-8 text-blue-600 mb-2" />
+                    <div className="text-sm font-semibold text-gray-900">Delivery Network</div>
+                  </div>
+                  <div className="bg-white rounded-xl p-4 shadow-md">
+                    <BarChart2 className="h-8 w-8 text-blue-600 mb-2" />
+                    <div className="text-sm font-semibold text-gray-900">Business Analytics</div>
                   </div>
                 </div>
               </div>
@@ -227,7 +233,7 @@ const AboutUsPage = () => {
               Our Mission & Values
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We exist to create trust in African e-commerce through guaranteed payments
+              Building the infrastructure to power Africa's digital commerce revolution
             </p>
           </div>
 
@@ -257,10 +263,10 @@ const AboutUsPage = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              The Kaihma Difference
+              The KAIHMA Difference
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Solving the payment problems African sellers face every day
+              Solving the fundamental challenges of African eCommerce
             </p>
           </div>
 
@@ -269,7 +275,7 @@ const AboutUsPage = () => {
             <div className="bg-red-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <div className="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
-                What Sellers Endure
+                African Commerce Challenges
               </h3>
               <div className="space-y-4">
                 {problems.map((problem, index) => (
@@ -285,7 +291,7 @@ const AboutUsPage = () => {
             <div className="bg-green-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                How Kaihma Fixes It
+                The KAIHMA Solution
               </h3>
               <div className="space-y-4">
                 {solutions.map((solution, index) => (
@@ -308,7 +314,7 @@ const AboutUsPage = () => {
               Meet The Team
             </h2>
             <p className="text-xl text-gray-600">
-              Passionate Africans building payment security for African sellers
+              Africans building Africa's commerce infrastructure
             </p>
           </div>
 
@@ -341,7 +347,7 @@ const AboutUsPage = () => {
               Success Stories
             </h2>
             <p className="text-xl text-gray-600">
-              African sellers thriving with Kaihma's protection
+              African businesses growing with KAIHMA's Commerce OS
             </p>
           </div>
 
@@ -415,14 +421,14 @@ const AboutUsPage = () => {
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Stop Losing Money?
+            Ready to Grow Your African Business?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Join 1,500+ African sellers who've eliminated payment fraud with Kaihma's escrow protection.
+            Join thousands of African entrepreneurs using KAIHMA's Commerce OS to sell across borders.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
-              Get Started Free
+              Start Selling Now
             </button>
             <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
               Contact Our Team

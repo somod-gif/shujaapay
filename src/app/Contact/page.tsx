@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, AlertCircle, Shield, Zap, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, AlertCircle, Shield, Zap, ArrowRight, Store, Truck, CreditCard, Globe } from 'lucide-react';
 
 const ContactPage = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -33,10 +33,10 @@ const ContactPage = () => {
     try {
       // Replace these with your actual EmailJS credentials
       await emailjs.sendForm(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID',
         form.current,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        'YOUR_PUBLIC_KEY'
       );
 
       setSubmitStatus('success');
@@ -58,20 +58,20 @@ const ContactPage = () => {
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6" />,
-      title: "Our Office",
-      details: ["Lagos, Nigeria", "Nairobi, Kenya"],
+      title: "Our Offices",
+      details: ["Lagos, Nigeria", "Nairobi, Kenya", "Accra, Ghana"],
       color: "text-blue-400"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      details: ["Nigeria: +234 700 356 6045", "Kenya: +254 700 356 604"],
+      details: ["Nigeria: +234 700 356 6045", "Kenya: +254 700 356 604", "Ghana: +233 700 356 604"],
       color: "text-blue-500"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
-      details: ["support@kaihma.com", "sales@kaihma.com"],
+      details: ["support@kaihma.com", "partners@kaihma.com"],
       color: "text-blue-600"
     },
     {
@@ -89,13 +89,13 @@ const ContactPage = () => {
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center bg-blue-500/20 rounded-full px-4 py-2 mb-6">
-            <span className="text-blue-100 text-sm font-medium">🚀 Trusted by African sellers</span>
+            <span className="text-blue-100 text-sm font-medium">🚀 The Commerce OS for Africa</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-            Contact Kaihma
+            Contact KAIHMA
           </h1>
           <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-            Get help with escrow protection, payment guarantees, or learn how to eliminate fake buyers from your business.
+            Get help with our Commerce OS - payments, logistics, store setup and cross-border selling.
           </p>
         </div>
       </section>
@@ -134,17 +134,17 @@ const ContactPage = () => {
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  Need Escrow Help?
+                  Need Commerce OS Help?
                 </h2>
                 <p className="text-gray-600">
-                  Our seller support team will help you set up payment protection and eliminate fake buyers.
+                  Our Africa-focused support team will help you with payments, logistics and growing your business.
                 </p>
               </div>
 
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg flex items-center gap-2 text-blue-800">
                   <CheckCircle className="w-5 h-5" />
-                  <span>Message sent successfully! Our seller support team will contact you within 24 hours.</span>
+                  <span>Message sent successfully! Our team will contact you within 24 hours.</span>
                 </div>
               )}
 
@@ -218,10 +218,11 @@ const ContactPage = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                     >
                       <option value="">Select inquiry type</option>
-                      <option value="onboarding">Get Started with Escrow</option>
-                      <option value="support">Escrow Support</option>
-                      <option value="business">Business Partnership</option>
-                      <option value="fraud">Report Fraud</option>
+                      <option value="store">Store Setup Help</option>
+                      <option value="payments">Payment Solutions</option>
+                      <option value="logistics">Logistics Support</option>
+                      <option value="crossborder">Cross-border Selling</option>
+                      <option value="partnership">Business Partnership</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
@@ -239,7 +240,7 @@ const ContactPage = () => {
                     required
                     rows={6}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
-                    placeholder="Tell us about your business and payment protection needs..."
+                    placeholder="Tell us about your business and how we can help..."
                   ></textarea>
                 </div>
 
@@ -256,44 +257,57 @@ const ContactPage = () => {
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
-                      Get Payment Protection Help
+                      Get Commerce OS Help
                     </>
                   )}
                 </button>
               </form>
             </div>
 
-            {/* Map and Additional Info */}
+            {/* Support Channels */}
             <div className="space-y-8">
-              {/* Support Channels */}
+              {/* Commerce Support */}
               <div className="bg-white rounded-2xl shadow-xl p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Seller Support Channels
+                  Commerce OS Support
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
-                      <Shield className="w-6 h-6" />
+                      <Store className="w-6 h-6" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-2">
-                        Escrow Protection Help
+                        Store Setup Help
                       </h4>
                       <p className="text-gray-600 text-sm">
-                        Get 24/7 assistance with setting up and managing your escrow payments.
+                        Get assistance creating your mobile-friendly store optimized for African customers.
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
-                      <Zap className="w-6 h-6" />
+                      <CreditCard className="w-6 h-6" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-2">
-                        Urgent Fraud Reports
+                        Payment Solutions
                       </h4>
                       <p className="text-gray-600 text-sm">
-                        Suspect a fake buyer? Contact us immediately for rapid response.
+                        Need help with escrow, cross-border payments or local payment methods?
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
+                      <Truck className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">
+                        Logistics Support
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        Get help with delivery tracking, cross-border shipping and logistics optimization.
                       </p>
                     </div>
                   </div>
@@ -303,31 +317,31 @@ const ContactPage = () => {
               {/* FAQ Section */}
               <div className="bg-white rounded-2xl shadow-xl p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Seller FAQs
+                  Commerce OS FAQs
                 </h3>
                 <div className="space-y-6">
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">
-                      How quickly can I set up escrow protection?
+                      How quickly can I set up my store on KAIHMA?
                     </h4>
                     <p className="text-gray-600 text-sm">
-                      You can activate escrow protection in under 10 minutes. Our team is available to guide you through the process.
+                      You can create a mobile-friendly store in under 15 minutes. Our team can help with advanced customization.
                     </p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">
-                      What's your response time for seller support?
+                      What African countries do you support for payments?
                     </h4>
                     <p className="text-gray-600 text-sm">
-                      We prioritize seller inquiries - typical response time is under 2 hours during business days.
+                      We support local payments in Nigeria, Kenya, Ghana and 12+ other African countries with escrow protection.
                     </p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">
-                      Do you offer integration help for my online store?
+                      Can I sell across borders with KAIHMA?
                     </h4>
                     <p className="text-gray-600 text-sm">
-                      Yes! Our technical team can help integrate Kaihma with Shopify, WooCommerce, and other platforms.
+                      Yes! Our Commerce OS handles cross-border payments, logistics and compliance for African markets.
                     </p>
                   </div>
                 </div>
@@ -341,14 +355,14 @@ const ContactPage = () => {
       <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Stop Losing Money to Fake Buyers
+            Grow Your African Business
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Join 1,500+ African sellers who've eliminated payment fraud with Kaihma's escrow protection.
+            Join thousands of entrepreneurs using KAIHMA's Commerce OS to sell across Africa.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 flex items-center justify-center mx-auto">
-              Get Started Free
+              Start Selling Now
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200">

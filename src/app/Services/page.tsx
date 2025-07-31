@@ -13,7 +13,15 @@ import {
   ChevronDown,
   ChevronUp,
   Star,
-  Play
+  Play,
+  Store,
+  Truck,
+  Lock,
+  BarChart2,
+  Globe2,
+  Box,
+  ShoppingCart,
+  Smartphone as MobileIcon
 } from 'lucide-react';
 
 const ServicesPage = () => {
@@ -30,77 +38,124 @@ const ServicesPage = () => {
 
   const services = [
     {
+      icon: Store,
+      title: 'Store Builder',
+      description: 'Create mobile-friendly online shops in minutes',
+      features: ['Optimized for smartphones', 'Low data usage', 'Custom domains', 'Inventory management']
+    },
+    {
       icon: CreditCard,
-      title: 'E-commerce Protection',
-      description: 'Sell online with guaranteed payments',
-      features: ['Pre-payment escrow', 'Auto-payout on delivery', 'Buyer verification', 'Dispute resolution']
+      title: 'Payments & Escrow',
+      description: 'Cross-border payments with built-in protection',
+      features: ['Escrow system', 'Multi-currency support', 'Instant payouts', 'Fraud prevention']
     },
     {
-      icon: Smartphone,
-      title: 'Freelancer Security',
-      description: 'Get paid upfront for your work',
-      features: ['Milestone payments', 'Client verification', 'Work protection', 'Secure contracts']
-    },
-    {
-      icon: TrendingUp,
-      title: 'B2B Transactions',
-      description: 'Secure large business deals with confidence',
-      features: ['Bulk order protection', 'Document verification', 'Multi-party escrow', 'API integration']
+      icon: Truck,
+      title: 'Delivery Infrastructure',
+      description: 'Built-in logistics for reliable shipping',
+      features: ['Order tracking', 'Delivery proof', 'Multiple carriers', 'Cost optimization']
     }
   ];
 
   const features = [
     {
-      icon: Shield,
-      title: 'Payment Guarantee',
-      description: 'Funds secured in escrow before you ship or deliver services'
+      icon: Lock,
+      title: 'Trust Infrastructure',
+      description: 'Ratings, proof-of-delivery, and dispute systems'
     },
     {
-      icon: Zap,
-      title: 'Instant Payouts',
-      description: 'Get paid immediately when buyers confirm delivery'
+      icon: BarChart2,
+      title: 'Analytics Dashboard',
+      description: 'Real-time insights for sellers and admins'
     },
     {
-      icon: Globe,
-      title: 'Pan-African',
-      description: 'Works across Nigeria, Kenya, and major African markets'
+      icon: Globe2,
+      title: 'Pan-African Reach',
+      description: 'Works across Nigeria, Kenya, Ghana, South Africa'
+    },
+    {
+      icon: Box,
+      title: 'Dropshipping Tools',
+      description: 'Source and fulfill without holding inventory'
+    },
+    {
+      icon: ShoppingCart,
+      title: 'Mobile Checkout',
+      description: 'Optimized for African mobile users'
     },
     {
       icon: Users,
-      title: 'Fraud Protection',
-      description: 'Verified buyers only - no more fake orders'
+      title: 'Buyer Protection',
+      description: 'Verified sellers and transparent policies'
+    },
+    {
+      icon: Zap,
+      title: 'Automation',
+      description: 'Auto-release payments after confirmed delivery'
+    },
+    {
+      icon: MobileIcon,
+      title: 'Mobile-First',
+      description: 'Designed for Africa\'s smartphone dominance'
     }
   ];
 
   const testimonials = [
     {
       name: 'Adunni Okafor',
-      role: 'Fashion Store Owner',
+      role: 'Fashion Entrepreneur',
       location: 'Lagos, Nigeria',
-      content: 'Kaihma saved me from losing ₦80k monthly to fake buyers. Now I process ₦450k monthly with zero rejections!',
+      content: 'KAIHMA helped me expand to Kenya and Ghana without worrying about payments or logistics. My cross-border sales grew 300% in 6 months!',
       rating: 5
     },
     {
       name: 'Samuel Maina',
-      role: 'Freelance Developer',
+      role: 'Electronics Seller',
       location: 'Nairobi, Kenya',
-      content: 'I was stressed about client payments until Kaihma. Now I handle 50+ orders weekly worry-free.',
+      content: 'The escrow system gave my customers confidence to order. My chargeback rate dropped to zero after switching to KAIHMA.',
       rating: 5
     },
     {
-      name: 'Victory Eze',
-      role: 'Dropshipper',
-      location: 'Abuja, Nigeria',
-      content: 'I was ready to quit e-commerce until Kaihma. The escrow system helped me scale and hire my second employee.',
+      name: 'Ama Mensah',
+      role: 'Handmade Goods',
+      location: 'Accra, Ghana',
+      content: 'Before KAIHMA, I lost money to fake orders. Now I have peace of mind with payment guarantees before shipping.',
       rating: 5
     }
   ];
 
   const stats = [
-    { number: '10K+', label: 'Protected Transactions' },
-    { number: '₦500M+', label: 'In Escrow' },
-    { number: '98%', label: 'Success Rate' },
-    { number: '0', label: 'Payment Rejections' }
+    { number: '10K+', label: 'African Sellers' },
+    { number: '₦2B+', label: 'Monthly GMV' },
+    { number: '15+', label: 'Countries Supported' },
+    { number: '98%', label: 'Delivery Success Rate' }
+  ];
+
+  const africanChallenges = [
+    {
+      challenge: "Payments",
+      traditional: "Only local payment support",
+      reality: "Cross-border payments are complex and unreliable",
+      icon: CreditCard
+    },
+    {
+      challenge: "Delivery",
+      traditional: "Sellers must sort logistics",
+      reality: "Logistics is broken, slow or missing",
+      icon: Truck
+    },
+    {
+      challenge: "Trust",
+      traditional: "No buyer protection",
+      reality: "Fraud and fear are common",
+      icon: Shield
+    },
+    {
+      challenge: "Setup",
+      traditional: "Complicated tools",
+      reality: "Many lack access or experience",
+      icon: Smartphone
+    }
   ];
 
   return (
@@ -110,23 +165,22 @@ const ServicesPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center bg-blue-500/20 rounded-full px-4 py-2 mb-6">
-              <span className="text-blue-100 text-sm font-medium">🚀 Trusted by African sellers</span>
+              <span className="text-blue-100 text-sm font-medium">🚀 The Commerce OS for Africa</span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
-              Stop Losing Money To Fake Buyers
+              eCommerce That Actually Works in Africa
             </h1>
             <p className="text-lg sm:text-xl text-blue-100 mb-8">
-              Kaihma's escrow system guarantees your payments before you ship. 
-              No more rejected deliveries or payment scams.
+              KAIHMA combines store creation, payments, logistics and trust tools into one platform built for Africa's unique market.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-blue-600 hover:bg-blue-50 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 shadow-lg flex items-center justify-center">
-                Get Started Free
+                Start Selling
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
               <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 flex items-center justify-center">
                 <Play className="mr-2 h-5 w-5" />
-                How It Works
+                See How It Works
               </button>
             </div>
           </div>
@@ -153,15 +207,60 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* How It Works Section */}
+      {/* Problem Section */}
       <section className="py-12 sm:py-16 bg-gray-50 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              How Kaihma Protects You
+              Why eCommerce Fails in Africa
             </h2>
             <p className="text-lg sm:text-xl text-gray-600">
-              Simple 4-step process to eliminate payment risks
+              Traditional platforms don't solve Africa's unique challenges
+            </p>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+              {africanChallenges.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div key={index} className="p-4 border border-gray-100 rounded-lg hover:shadow-md transition-shadow">
+                    <div className="flex items-start">
+                      <div className="bg-blue-100 p-2 rounded-lg mr-4">
+                        <Icon className="h-5 w-5 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 mb-2">{item.challenge}</h3>
+                        <div className="text-sm text-gray-600 mb-1">
+                          <span className="font-medium">Traditional:</span> {item.traditional}
+                        </div>
+                        <div className="text-sm text-gray-600">
+                          <span className="font-medium">Reality:</span> {item.reality}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="bg-blue-50 px-6 py-4 border-t border-blue-100">
+              <p className="text-center text-blue-700 font-medium">
+                KAIHMA is designed to solve these problems with built-in solutions
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-12 sm:py-16 bg-white px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              The KAIHMA Commerce OS
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600">
+              Everything African sellers need in one platform
             </p>
           </div>
 
@@ -169,27 +268,27 @@ const ServicesPage = () => {
             {[
               {
                 step: "1",
-                title: "Buyer Pays",
-                description: "Customer funds are secured in escrow",
-                icon: CreditCard
+                title: "Create Store",
+                description: "Mobile-friendly shop in minutes",
+                icon: Store
               },
               {
                 step: "2", 
-                title: "You Ship",
-                description: "Get notified to dispatch the order",
-                icon: Smartphone
+                title: "Secure Payment",
+                description: "Buyer funds held in escrow",
+                icon: Lock
               },
               {
                 step: "3",
-                title: "Delivery Confirmed",
-                description: "Buyer confirms receipt of goods",
-                icon: CheckCircle
+                title: "Reliable Delivery",
+                description: "Built-in logistics with tracking",
+                icon: Truck
               },
               {
                 step: "4",
-                title: "Instant Payout",
-                description: "Funds released to your account",
-                icon: TrendingUp
+                title: "Trusted Transaction",
+                description: "Payment released after confirmation",
+                icon: CheckCircle
               }
             ].map((step, index) => {
               const Icon = step.icon;
@@ -220,14 +319,14 @@ const ServicesPage = () => {
       </section>
 
       {/* Core Services */}
-      <section className="py-12 sm:py-16 bg-white px-4 sm:px-6">
+      <section className="py-12 sm:py-16 bg-gray-50 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Who Uses Kaihma?
+              The Complete Commerce Stack
             </h2>
             <p className="text-lg sm:text-xl text-gray-600">
-              Any seller who's tired of losing money to payment scams
+              All the tools African sellers need to succeed online
             </p>
           </div>
 
@@ -261,22 +360,22 @@ const ServicesPage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-12 sm:py-16 bg-gray-50 px-4 sm:px-6">
+      <section className="py-12 sm:py-16 bg-white px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Sellers Love Kaihma
+              Built for African Commerce
             </h2>
             <p className="text-lg sm:text-xl text-gray-600">
-              The escrow system that eliminates payment rejections and fraud
+              Features designed around Africa's unique market needs
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-            {features.slice(0, showAllFeatures ? features.length : 4).map((feature, index) => {
+            {features.slice(0, showAllFeatures ? features.length : 8).map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <div key={index} className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1">
+                <div key={index} className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1 border border-gray-100">
                   <div className="w-10 sm:w-12 h-10 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
                     <Icon className="h-5 sm:h-6 w-5 sm:w-6 text-blue-600" />
                   </div>
@@ -291,33 +390,31 @@ const ServicesPage = () => {
             })}
           </div>
 
-          {features.length > 4 && (
-            <div className="text-center mt-6 sm:mt-8">
-              <button
-                onClick={() => setShowAllFeatures(!showAllFeatures)}
-                className="text-blue-600 font-semibold hover:text-blue-700 transition-colors flex items-center justify-center mx-auto text-sm sm:text-base"
-              >
-                {showAllFeatures ? 'Show Less Features' : 'Show All Features'}
-                {showAllFeatures ? (
-                  <ChevronUp className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
-                ) : (
-                  <ChevronDown className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
-                )}
-              </button>
-            </div>
-          )}
+          <div className="text-center mt-6 sm:mt-8">
+            <button
+              onClick={() => setShowAllFeatures(!showAllFeatures)}
+              className="text-blue-600 font-semibold hover:text-blue-700 transition-colors flex items-center justify-center mx-auto text-sm sm:text-base"
+            >
+              {showAllFeatures ? 'Show Less Features' : 'Show All Features'}
+              {showAllFeatures ? (
+                <ChevronUp className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
+              ) : (
+                <ChevronDown className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
+              )}
+            </button>
+          </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-12 sm:py-16 bg-white px-4 sm:px-6">
+      <section className="py-12 sm:py-16 bg-gray-50 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Real Sellers, Real Results
+              African Entrepreneurs Love KAIHMA
             </h2>
             <p className="text-lg sm:text-xl text-gray-600">
-              African sellers who stopped losing money with Kaihma
+              Stories from sellers across the continent
             </p>
           </div>
 
@@ -376,17 +473,17 @@ const ServicesPage = () => {
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-12 sm:py-16 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
-            Stop Losing Money Today
+            Ready to Grow Your African Business?
           </h2>
           <p className="text-lg sm:text-xl text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Join thousands of sellers who've already protected their income with Kaihma's escrow system.
+            Join thousands of African entrepreneurs using KAIHMA to sell across borders with confidence.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <button className="bg-white text-blue-600 hover:bg-blue-50 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 shadow-lg">
-              Get Started Free
+              Start Selling Now
             </button>
             <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300">
-              Contact Sales
+              Contact Our Team
             </button>
           </div>
         </div>
