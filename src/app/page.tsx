@@ -23,7 +23,7 @@ import {
   ShoppingBag,
   Wifi,
   Clock,
-  Target
+  Target,
 } from "lucide-react";
 
 const KaihmaLanding: React.FC = () => {
@@ -66,23 +66,27 @@ const KaihmaLanding: React.FC = () => {
     {
       icon: Store,
       title: "Mobile-First Store Builder",
-      description: "Create stunning online shops in minutes, optimized for smartphones and low data usage"
+      description:
+        "Create stunning online shops in minutes, optimized for smartphones and low data usage",
     },
     {
       icon: Shield,
       title: "Built-in Escrow System",
-      description: "Cross-border payments with guaranteed money release only after confirmed delivery"
+      description:
+        "Cross-border payments with guaranteed money release only after confirmed delivery",
     },
     {
       icon: Truck,
       title: "Integrated Logistics",
-      description: "Track deliveries, capture proof, and ensure reliable fulfillment across Africa"
+      description:
+        "Track deliveries, capture proof, and ensure reliable fulfillment across Africa",
     },
     {
       icon: UserCheck,
       title: "Trust Infrastructure",
-      description: "Verified sellers, ratings system, and transparent dispute resolution"
-    }
+      description:
+        "Verified sellers, ratings system, and transparent dispute resolution",
+    },
   ];
 
   const services = [
@@ -94,7 +98,7 @@ const KaihmaLanding: React.FC = () => {
         "Theme builder & customization",
         "Inventory management tools",
         "Product upload & optimization",
-        "Custom domain integration"
+        "Custom domain integration",
       ],
     },
     {
@@ -105,7 +109,7 @@ const KaihmaLanding: React.FC = () => {
         "Multi-currency support",
         "Automated escrow release",
         "Payment tracking & history",
-        "Instant payout on delivery"
+        "Instant payout on delivery",
       ],
     },
     {
@@ -116,7 +120,7 @@ const KaihmaLanding: React.FC = () => {
         "Sales dashboard & reports",
         "Customer behavior analytics",
         "Inventory tracking",
-        "Revenue optimization tools"
+        "Revenue optimization tools",
       ],
     },
   ];
@@ -126,23 +130,26 @@ const KaihmaLanding: React.FC = () => {
       name: "Adunni Okafor",
       role: "Fashion Store Owner",
       location: "Lagos, Nigeria",
-      content: "KAIHMA's escrow system saved me from losing ₦80k monthly to fake buyers. Now I process ₦450k monthly with complete peace of mind!",
+      content:
+        "KAIHMA's escrow system saved me from losing ₦80k monthly to fake buyers. Now I process ₦450k monthly with complete peace of mind!",
       rating: 5,
       avatar: "AO",
     },
     {
-      name: "Samuel Maina", 
+      name: "Samuel Maina",
       role: "Tech Entrepreneur",
       location: "Nairobi, Kenya",
-      content: "The integrated logistics and payment system helped me scale from 10 to 200+ orders monthly. KAIHMA handles everything seamlessly.",
+      content:
+        "The integrated logistics and payment system helped me scale from 10 to 200+ orders monthly. KAIHMA handles everything seamlessly.",
       rating: 5,
       avatar: "SM",
     },
     {
       name: "Victory Eze",
       role: "Dropshipper",
-      location: "Abuja, Nigeria", 
-      content: "I was ready to quit e-commerce until KAIHMA. The trust infrastructure helped me scale and hire my second employee.",
+      location: "Abuja, Nigeria",
+      content:
+        "I was ready to quit e-commerce until KAIHMA. The trust infrastructure helped me scale and hire my second employee.",
       rating: 5,
       avatar: "VE",
     },
@@ -152,17 +159,17 @@ const KaihmaLanding: React.FC = () => {
     {
       name: "Adebayo O.",
       business: "Electronics Seller",
-      text: "KAIHMA's Commerce OS eliminated all my payment headaches"
+      text: "KAIHMA's Commerce OS eliminated all my payment headaches",
     },
     {
       name: "Fatima A.",
       business: "Fashion Store",
-      text: "Built my entire online business in under 30 minutes"
+      text: "Built my entire online business in under 30 minutes",
     },
     {
       name: "Chidi M.",
-      business: "Phone Dealer", 
-      text: "Cross-border payments finally work reliably in Africa"
+      business: "Phone Dealer",
+      text: "Cross-border payments finally work reliably in Africa",
     },
   ];
 
@@ -175,33 +182,36 @@ const KaihmaLanding: React.FC = () => {
 
   const problemPoints = [
     "Complex payment systems that don't work across borders",
-    "Broken logistics that lose your products and damage trust", 
+    "Broken logistics that lose your products and damage trust",
     "No buyer protection leading to constant fraud fears",
     "Technical barriers preventing quick store setup",
-    "Lack of integrated tools forcing expensive third-party solutions"
+    "Lack of integrated tools forcing expensive third-party solutions",
   ];
 
   const solutionSteps = [
     {
       step: "1",
       title: "Quick Store Setup",
-      description: "Launch your mobile-optimized store in minutes with our drag-and-drop builder"
+      description:
+        "Launch your mobile-optimized store in minutes with our drag-and-drop builder",
     },
     {
-      step: "2", 
+      step: "2",
       title: "Secure Payments",
-      description: "Customers pay into escrow first - your money is guaranteed before shipping"
+      description:
+        "Customers pay into escrow first - your money is guaranteed before shipping",
     },
     {
       step: "3",
-      title: "Reliable Delivery", 
-      description: "Our logistics network tracks every package with proof of delivery"
+      title: "Reliable Delivery",
+      description:
+        "Our logistics network tracks every package with proof of delivery",
     },
     {
       step: "4",
       title: "Instant Payout",
-      description: "Money releases automatically when delivery is confirmed"
-    }
+      description: "Money releases automatically when delivery is confirmed",
+    },
   ];
 
   return (
@@ -269,34 +279,25 @@ const KaihmaLanding: React.FC = () => {
 
               {/* Enhanced Description - Responsive */}
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                The <span className="font-semibold text-white">complete commerce infrastructure</span> that combines store creation, secure payments, delivery tracking, and buyer protection into one powerful platform built for Africa's unique market realities.
+                The{" "}
+                <span className="font-semibold text-white">
+                  complete commerce infrastructure
+                </span>{" "}
+                that combines store creation, secure payments, delivery
+                tracking, and buyer protection into one powerful platform built
+                for Africa's unique market realities.
               </p>
-
-              {/* Value Props - Responsive Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 lg:gap-4 max-w-md mx-auto lg:mx-0">
-                <div className="flex items-center space-x-2 justify-center lg:justify-start">
-                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm text-blue-100">Escrow-Protected Payments</span>
-                </div>
-                <div className="flex items-center space-x-2 justify-center lg:justify-start">
-                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm text-blue-100">Built-in Logistics</span>
-                </div>
-                <div className="flex items-center space-x-2 justify-center lg:justify-start">
-                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm text-blue-100">Mobile-First Design</span>
-                </div>
-                <div className="flex items-center space-x-2 justify-center lg:justify-start">
-                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm text-blue-100">Cross-Border Ready</span>
-                </div>
-              </div>
 
               {/* Enhanced CTA Buttons - Responsive Stacking */}
               <div className="flex flex-col space-y-3 sm:space-y-4 lg:flex-row lg:space-y-0 lg:space-x-4">
-                <a href="/Auth/Register" className="group bg-gradient-to-r from-white to-blue-50 text-blue-700 hover:from-blue-50 hover:to-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center relative overflow-hidden">
+                <a
+                  href="/Auth/Register"
+                  className="group bg-gradient-to-r from-white to-blue-50 text-blue-700 hover:from-blue-50 hover:to-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center relative overflow-hidden"
+                >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                  <span className="relative z-10">Start Building Your Store</span>
+                  <span className="relative z-10">
+                    Start Building Your Store
+                  </span>
                   <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 group-hover:translate-x-1 transition-transform relative z-10" />
                 </a>
 
@@ -312,7 +313,9 @@ const KaihmaLanding: React.FC = () => {
                   <div className="flex-shrink-0">
                     <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-sm sm:text-base lg:text-lg">
-                        {heroTestimonials[currentHeroTestimonial].name.charAt(0)}
+                        {heroTestimonials[currentHeroTestimonial].name.charAt(
+                          0
+                        )}
                       </span>
                     </div>
                   </div>
@@ -345,8 +348,12 @@ const KaihmaLanding: React.FC = () => {
                       <Layers className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-gray-900 font-bold text-sm sm:text-base lg:text-lg">KAIHMA Dashboard</h3>
-                      <p className="text-gray-500 text-xs sm:text-sm">Commerce Operating System</p>
+                      <h3 className="text-gray-900 font-bold text-sm sm:text-base lg:text-lg">
+                        KAIHMA Dashboard
+                      </h3>
+                      <p className="text-gray-500 text-xs sm:text-sm">
+                        Commerce Operating System
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-1 sm:space-x-2 text-green-600 text-xs sm:text-sm font-semibold bg-green-50 px-2 sm:px-3 lg:px-4 py-1 sm:py-2 rounded-full">
@@ -361,36 +368,52 @@ const KaihmaLanding: React.FC = () => {
                   <div className="bg-blue-50 rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4">
                     <div className="flex items-center justify-between mb-1 sm:mb-2">
                       <Store className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-blue-600" />
-                      <span className="text-xs font-medium text-blue-600">STORES</span>
+                      <span className="text-xs font-medium text-blue-600">
+                        STORES
+                      </span>
                     </div>
-                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">24</div>
+                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">
+                      24
+                    </div>
                     <div className="text-xs text-gray-600">Active stores</div>
                   </div>
                   <div className="bg-green-50 rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4">
                     <div className="flex items-center justify-between mb-1 sm:mb-2">
                       <Shield className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-green-600" />
-                      <span className="text-xs font-medium text-green-600">ESCROW</span>
+                      <span className="text-xs font-medium text-green-600">
+                        ESCROW
+                      </span>
                     </div>
-                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">₦{(450 + (animatedValue % 100)).toLocaleString()}k</div>
+                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">
+                      ₦{(450 + (animatedValue % 100)).toLocaleString()}k
+                    </div>
                     <div className="text-xs text-gray-600">Protected</div>
                   </div>
                 </div>
 
                 {/* Recent Activity - Responsive */}
                 <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-                  <h4 className="text-xs sm:text-sm font-semibold text-gray-700">Recent Activity</h4>
+                  <h4 className="text-xs sm:text-sm font-semibold text-gray-700">
+                    Recent Activity
+                  </h4>
                   <div className="space-y-1 sm:space-y-2">
                     <div className="flex items-center space-x-2 sm:space-x-3 p-1.5 sm:p-2 bg-gray-50 rounded-lg">
                       <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm text-gray-700 truncate">Payment released for Order #1247</span>
+                      <span className="text-xs sm:text-sm text-gray-700 truncate">
+                        Payment released for Order #1247
+                      </span>
                     </div>
                     <div className="flex items-center space-x-2 sm:space-x-3 p-1.5 sm:p-2 bg-blue-50 rounded-lg">
                       <Clock className="h-3 w-3 sm:h-4 sm:w-4 text-blue-500 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm text-gray-700 truncate">New store created: Fashion Hub</span>
+                      <span className="text-xs sm:text-sm text-gray-700 truncate">
+                        New store created: Fashion Hub
+                      </span>
                     </div>
                     <div className="flex items-center space-x-2 sm:space-x-3 p-1.5 sm:p-2 bg-yellow-50 rounded-lg">
                       <Truck className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-600 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm text-gray-700 truncate">Delivery in progress: 3 orders</span>
+                      <span className="text-xs sm:text-sm text-gray-700 truncate">
+                        Delivery in progress: 3 orders
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -399,11 +422,15 @@ const KaihmaLanding: React.FC = () => {
                 <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   <button className="flex items-center justify-center space-x-1 sm:space-x-2 bg-blue-600 text-white py-2 sm:py-3 rounded-lg hover:bg-blue-700 transition-colors">
                     <Store className="h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="text-xs sm:text-sm font-medium">New Store</span>
+                    <span className="text-xs sm:text-sm font-medium">
+                      New Store
+                    </span>
                   </button>
                   <button className="flex items-center justify-center space-x-1 sm:space-x-2 bg-green-600 text-white py-2 sm:py-3 rounded-lg hover:bg-green-700 transition-colors">
                     <BarChart3 className="h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="text-xs sm:text-sm font-medium">Analytics</span>
+                    <span className="text-xs sm:text-sm font-medium">
+                      Analytics
+                    </span>
                   </button>
                 </div>
               </div>
@@ -412,7 +439,9 @@ const KaihmaLanding: React.FC = () => {
               <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-green-500 text-white px-2 sm:px-3 lg:px-4 py-1 sm:py-2 rounded-lg shadow-lg animate-bounce z-20">
                 <div className="flex items-center space-x-1 sm:space-x-2">
                   <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4" />
-                  <span className="text-xs sm:text-sm font-semibold">Store Live!</span>
+                  <span className="text-xs sm:text-sm font-semibold">
+                    Store Live!
+                  </span>
                 </div>
               </div>
 
@@ -420,8 +449,12 @@ const KaihmaLanding: React.FC = () => {
                 <div className="flex items-center space-x-2 sm:space-x-3">
                   <TrendingUp className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-blue-500" />
                   <div>
-                    <p className="text-xs sm:text-sm text-gray-600">Monthly Growth</p>
-                    <p className="font-bold text-lg sm:text-xl text-gray-900">+247%</p>
+                    <p className="text-xs sm:text-sm text-gray-600">
+                      Monthly Growth
+                    </p>
+                    <p className="font-bold text-lg sm:text-xl text-gray-900">
+                      +247%
+                    </p>
                   </div>
                 </div>
               </div>
@@ -444,7 +477,8 @@ const KaihmaLanding: React.FC = () => {
                 </h3>
                 <div className="text-red-700 space-y-3 sm:space-y-4">
                   <p className="font-semibold text-base sm:text-lg mb-3 sm:mb-4">
-                    African entrepreneurs face unique challenges that global platforms ignore:
+                    African entrepreneurs face unique challenges that global
+                    platforms ignore:
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                     {problemPoints.map((point, index) => (
@@ -458,7 +492,10 @@ const KaihmaLanding: React.FC = () => {
                     <p className="text-lg sm:text-xl font-bold text-red-800">
                       Result: 60%+ of African commerce still happens offline
                     </p>
-                    <p className="text-xs sm:text-sm mt-2">Not because people don't want to buy online, but because the infrastructure doesn't work.</p>
+                    <p className="text-xs sm:text-sm mt-2">
+                      Not because people don't want to buy online, but because
+                      the infrastructure doesn't work.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -475,13 +512,17 @@ const KaihmaLanding: React.FC = () => {
               Introducing KAIHMA - Built for African Realities
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              The first Commerce Operating System designed from the ground up to solve Africa's unique eCommerce challenges.
+              The first Commerce Operating System designed from the ground up to
+              solve Africa's unique eCommerce challenges.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
             {solutionSteps.map((step, index) => (
-              <div key={index} className="bg-white p-4 sm:p-6 rounded-xl shadow-md text-center">
+              <div
+                key={index}
+                className="bg-white p-4 sm:p-6 rounded-xl shadow-md text-center"
+              >
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mb-3 sm:mb-4 mx-auto">
                   {step.step}
                 </div>
@@ -501,35 +542,17 @@ const KaihmaLanding: React.FC = () => {
               We're Not Building an African Shopify
             </h3>
             <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 max-w-3xl mx-auto px-2">
-              We're writing a new playbook — one where <strong>trust is built-in, not assumed</strong>. 
-              KAIHMA provides the complete commerce stack: store, payments, delivery, and trust infrastructure.
+              We're writing a new playbook — one where{" "}
+              <strong>trust is built-in, not assumed</strong>. KAIHMA provides
+              the complete commerce stack: store, payments, delivery, and trust
+              infrastructure.
             </p>
             <div className="flex justify-center">
               <div className="bg-blue-100 px-4 sm:px-6 py-2 sm:py-3 rounded-full">
-                <span className="text-blue-800 font-semibold text-sm sm:text-base">Commerce Operating System</span>
+                <span className="text-blue-800 font-semibold text-sm sm:text-base">
+                  Commerce Operating System
+                </span>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section - Super Responsive */}
-      <section className="bg-white py-8 sm:py-12 lg:py-16">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 text-white">
-            <div className="text-center mb-6 sm:mb-8">
-              <h3 className="text-xl sm:text-2xl font-bold mb-2">KAIHMA By The Numbers</h3>
-              <p className="text-blue-100 text-sm sm:text-base">Powering the future of African commerce</p>
-            </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-blue-100 font-medium text-xs sm:text-sm lg:text-base">{stat.label}</div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
@@ -543,7 +566,8 @@ const KaihmaLanding: React.FC = () => {
               Everything You Need in One Platform
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              KAIHMA combines all essential commerce tools into a unified operating system designed for African markets.
+              KAIHMA combines all essential commerce tools into a unified
+              operating system designed for African markets.
             </p>
           </div>
 
@@ -561,7 +585,9 @@ const KaihmaLanding: React.FC = () => {
                   <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 text-sm sm:text-base">{feature.description}</p>
+                  <p className="text-gray-600 text-sm sm:text-base">
+                    {feature.description}
+                  </p>
                 </div>
               );
             })}
@@ -577,7 +603,8 @@ const KaihmaLanding: React.FC = () => {
               Complete Commerce Infrastructure
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              From store creation to payment processing, KAIHMA handles every aspect of your online business.
+              From store creation to payment processing, KAIHMA handles every
+              aspect of your online business.
             </p>
           </div>
 
@@ -595,7 +622,9 @@ const KaihmaLanding: React.FC = () => {
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">{service.description}</p>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
+                    {service.description}
+                  </p>
                   <ul className="space-y-2 sm:space-y-3">
                     {service.features.map((feature, featureIndex) => (
                       <li
@@ -811,23 +840,38 @@ const KaihmaLanding: React.FC = () => {
                 </a>
               </div>
             </div>
-
-            
           </div>
         </div>
       </section>
 
-      {/* CTA Section - Super Responsive */}
+      {/* CTA Section - Super Responsive with Limited Spots Counter */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-10 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">
             Stop Losing Money Today
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-            Join 1,353 sellers who've already protected their income with
-            Kaihma's escrow system. Limited spots available - next batch opens
-            Q2 2025.
+
+          {/* Limited Spots Badge */}
+          <div className="inline-block bg-blue-500/20 border border-blue-300 rounded-full px-4 py-2 mb-4 sm:mb-6">
+            <span className="text-white font-medium text-sm sm:text-base">
+              <span className="font-bold">Limited Spots (147 Remaining)</span>
+            </span>
+          </div>
+
+          <p className="text-base sm:text-lg lg:text-xl text-blue-100 mb-4 sm:mb-6 max-w-2xl mx-auto px-4">
+            <span className="font-semibold text-white">1,353 sellers</span>{" "}
+            joined the waitlist.
+            <br className="hidden sm:block" />
+            Only <span className="font-bold text-white">
+              147 spots left
+            </span>{" "}
+            for early access.
           </p>
+          <p className="text-sm sm:text-base text-blue-200 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
+            Next batch waits until{" "}
+            <span className="font-semibold">Q2 2026</span>.
+          </p>
+
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md mx-auto">
             <button className="bg-white text-blue-600 hover:bg-blue-50 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95">
               Claim Your Spot
