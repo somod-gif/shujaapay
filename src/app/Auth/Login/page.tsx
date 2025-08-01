@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import { ArrowRight, Eye, EyeOff, Shield, Store, Truck, CreditCard, X } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -14,8 +17,7 @@ const LoginPage = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [showForgotPasswordModal, setShowForgotPasswordModal] = useState(false);
   const [forgotPasswordEmail, setForgotPasswordEmail] = useState('');
-  const [forgotPasswordError, setForgotPasswordError] = useState('');
-  const [forgotPasswordSuccess, setForgotPasswordSuccess] = useState(false);
+  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -34,46 +36,111 @@ const LoginPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validate()) {
-      setIsSubmitting(true);
-      // Login logic here
-      console.log('Logging in:', formData);
+    if (!validate()) {
+      toast.error('Please fill in all required fields', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      toast.success('Login successful! Redirecting to dashboard...', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      });
+
+      // Redirect to dashboard after 3 seconds
       setTimeout(() => {
-        setIsSubmitting(false);
-      }, 2000);
+        router.push('/Business/Dashboard');
+      }, 3000);
+      
+    } catch (error) {
+      toast.error('Login failed. Please check your credentials and try again.', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
-  const handleForgotPasswordSubmit = (e: React.FormEvent) => {
+  const handleForgotPasswordSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!forgotPasswordEmail) {
-      setForgotPasswordError('Email is required');
+      toast.error('Please enter your email address', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      });
       return;
     }
     
-    // Reset error and success states
-    setForgotPasswordError('');
-    setForgotPasswordSuccess(false);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setForgotPasswordSuccess(true);
-      // Auto-close after 3 seconds
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      toast.success(`Password reset link sent to ${forgotPasswordEmail}`, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      });
+
+      // Close modal after success
       setTimeout(() => {
         setShowForgotPasswordModal(false);
         setForgotPasswordEmail('');
-        setForgotPasswordSuccess(false);
       }, 3000);
-    }, 1500);
+      
+    } catch (error) {
+      toast.error('Failed to send reset link. Please try again.', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      });
+    }
   };
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4 mt-5">
+      <ToastContainer />
       <div className="max-w-4xl w-full grid grid-cols-1 lg:grid-cols-2 bg-white rounded-2xl shadow-xl overflow-hidden">
         {/* Left Side - Form */}
-        <div className="p-8 sm:p-1">
+        <div className="p-8 sm:p-10">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome Back</h1>
             <p className="text-gray-600">Sign in to your KAIHMA Commerce OS account</p>
@@ -216,7 +283,7 @@ const LoginPage = () => {
 
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <CreditCard className="w-5 h-5" />
+                <CreditCard className="w-5 w-5" />
               </div>
               <div>
                 <h3 className="font-semibold">Multiple Payment Options</h3>
@@ -238,8 +305,6 @@ const LoginPage = () => {
                   onClick={() => {
                     setShowForgotPasswordModal(false);
                     setForgotPasswordEmail('');
-                    setForgotPasswordError('');
-                    setForgotPasswordSuccess(false);
                   }}
                   className="text-gray-400 hover:text-gray-500"
                 >
@@ -247,47 +312,31 @@ const LoginPage = () => {
                 </button>
               </div>
 
-              {forgotPasswordSuccess ? (
-                <div className="text-center py-4">
-                  <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
-                    <svg className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">Email Sent!</h3>
-                  <p className="text-sm text-gray-500">
-                    We've sent a password reset link to {forgotPasswordEmail}. Please check your inbox.
-                  </p>
+              <p className="text-sm text-gray-600 mb-4">
+                Enter your email address and we'll send you a link to reset your password.
+              </p>
+              <form onSubmit={handleForgotPasswordSubmit}>
+                <div className="mb-4">
+                  <label htmlFor="forgot-email" className="block text-sm font-medium text-gray-700 mb-1">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="forgot-email"
+                    value={forgotPasswordEmail}
+                    onChange={(e) => setForgotPasswordEmail(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="your@business.com"
+                    required
+                  />
                 </div>
-              ) : (
-                <>
-                  <p className="text-sm text-gray-600 mb-4">
-                    Enter your email address and we'll send you a link to reset your password.
-                  </p>
-                  <form onSubmit={handleForgotPasswordSubmit}>
-                    <div className="mb-4">
-                      <label htmlFor="forgot-email" className="block text-sm font-medium text-gray-700 mb-1">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        id="forgot-email"
-                        value={forgotPasswordEmail}
-                        onChange={(e) => setForgotPasswordEmail(e.target.value)}
-                        className={`w-full px-4 py-3 border ${forgotPasswordError ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent`}
-                        placeholder="your@business.com"
-                      />
-                      {forgotPasswordError && <p className="mt-1 text-sm text-red-600">{forgotPasswordError}</p>}
-                    </div>
-                    <button
-                      type="submit"
-                      className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200"
-                    >
-                      Send Reset Link
-                    </button>
-                  </form>
-                </>
-              )}
+                <button
+                  type="submit"
+                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200"
+                >
+                  Send Reset Link
+                </button>
+              </form>
             </div>
           </div>
         </div>

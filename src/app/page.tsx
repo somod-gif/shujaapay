@@ -559,7 +559,7 @@ const KaihmaLanding: React.FC = () => {
       </section>
 
       {/* Core Features Section - Responsive Grid */}
-      <section className="py-10 sm:py-16 lg:py-20 bg-gray-50">
+      {/* <section className="py-10 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
@@ -593,7 +593,7 @@ const KaihmaLanding: React.FC = () => {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Services Deep Dive - Mobile First Layout */}
       <section className="py-10 sm:py-16 lg:py-20 bg-white">

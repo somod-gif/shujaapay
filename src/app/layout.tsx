@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import ToastProvider from "./Components/ToastProvider";
 
 
 
@@ -44,6 +45,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`font-sans antialiased bg-white text-gray-900`}>
+        <ToastProvider />
+        {/* Navbar and Footer components */}
         <div className="min-h-screen flex flex-col">
           <Navbar logo="/images/logo.jpg" />
           <main className="flex-1">

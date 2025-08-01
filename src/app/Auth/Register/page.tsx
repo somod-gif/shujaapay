@@ -1,7 +1,10 @@
 "use client";
 import React, { useState } from 'react';
-import { ArrowRight, Shield, Store, Truck, CreditCard, Globe, CheckCircle, Eye, EyeOff } from 'lucide-react';
+import { ArrowRight, Store, Truck, CreditCard, Globe, Eye, EyeOff } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RegisterPage = () => {
   const [formData, setFormData] = useState({
@@ -10,12 +13,13 @@ const RegisterPage = () => {
     phone: '',
     password: '',
     businessType: '',
-    country: 'Nigeria'
+    country: ''
   });
 
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const router = useRouter();
 
   const countries = ['Nigeria', 'Kenya', 'Ghana', 'South Africa', 'Rwanda', 'Uganda', 'Tanzania', 'Other'];
 
@@ -40,20 +44,61 @@ const RegisterPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validate()) {
-      setIsSubmitting(true);
-      // Submit logic here
-      console.log('Registering:', formData);
+    
+    if (!validate()) {
+      toast.error('Please fix all form errors before submitting', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      toast.success('Account created successfully! Redirecting to Onoarding ', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      });
+
+      // Redirect to dashboard after 3 seconds
       setTimeout(() => {
-        setIsSubmitting(false);
-      }, 2000);
+        router.push('/Business/Dashboard');
+      }, 3000);
+      
+    } catch (error) {
+      toast.error('Registration failed. Please try again.', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4 mt-5">
+      <ToastContainer />
       <div className="max-w-4xl w-full grid grid-cols-1 lg:grid-cols-2 bg-white rounded-2xl shadow-xl overflow-hidden">
         {/* Left Side - Form */}
         <div className="p-8 sm:p-10">
@@ -97,7 +142,7 @@ const RegisterPage = () => {
 
             <div>
               <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                WhatsApp Number *
+                Phone Number*
               </label>
               <input
                 type="tel"
