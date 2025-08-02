@@ -24,9 +24,7 @@ const Footer = ({ logo }: FooterProps) => {
               </div>
               <h2 className="ml-3 text-2xl font-bold">Kaihma</h2>
             </div>
-            <p className="text-blue-200">
-              Eliminating payment rejections and fraud for African sellers through secure escrow services.
-            </p>
+            
           </div>
 
           {/* Quick Links */}
