@@ -76,9 +76,9 @@ const RegisterPage = () => {
         theme: "colored",
       });
 
-      // Redirect to dashboard after 3 seconds
+      // Redirect to onboarding after 3 seconds
       setTimeout(() => {
-        router.push('/Business/Dashboard');
+        router.push('/Business/Onboarding');
       }, 3000);
       
     } catch (error) {
