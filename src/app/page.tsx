@@ -303,7 +303,7 @@ const KaihmaLanding: React.FC = () => {
 
                 <button className="group border-2 border-white/80 text-white hover:bg-white/10 backdrop-blur-sm px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-semibold transition-all duration-300 flex items-center justify-center hover:border-white hover:shadow-lg">
                   <Play className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 group-hover:scale-110 transition-transform" />
-                  See How It Works
+                  Coming Soon 
                 </button>
               </div>
 
