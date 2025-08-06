@@ -1,0 +1,182 @@
+Thanks for the clarification!
+
+Since **Kaihma is a business dashboard** for African merchants, here’s the **refined 2-week Frontend MVP Roadmap**, tailored for a **Business Admin-style Dashboard**, with proper tone and content to impress a senior engineer like Daddy Rusiwat.
+
+---
+
+## 📊 **Kaihma Business Dashboard – Frontend MVP (2 Weeks Plan)**
+
+**Goal:** Build and deploy a polished, responsive commerce dashboard MVP for African merchants.
+**Stack:** Next.js (App Router), Tailwind CSS, Framer Motion or ShadCN, Firebase (or backend auth token), Lucide Icons.
+
+---
+
+### 📅 **Week 1: Onboarding Flow + Dashboard Shell**
+
+#### **Day 1: Environment & Structure**
+
+* Setup project with `Next.js`, `Tailwind`, `Framer Motion` or `ShadCN`
+* Setup folders:
+
+  ```
+  /app
+    └── /onboarding
+    └── /dashboard
+    └── /components
+    └── /lib
+  ```
+* Define global layout with sidebar + header
+
+🎯 *Deliverable*: Responsive layout scaffolding, sidebar working
+
+---
+
+#### **Day 2–3: Onboarding Flow (4 Steps)**
+
+* `/onboarding/page.tsx` – controlled multi-step UI:
+
+  1. Welcome
+  2. Store Setup (name, category, logo)
+  3. Location & Delivery Preferences (POD, logistics)
+  4. Payment Preferences (wallet, escrow toggle)
+
+🎯 *Deliverable*: Save onboarding data in state or Firestore
+
+---
+
+#### **Day 4: Navigation System**
+
+* Sidebar Navigation:
+
+  * Dashboard Overview
+  * Products
+  * Orders
+  * Deliveries
+  * Payments
+  * Settings
+  * Support
+
+🎯 *Deliverable*: Sidebar with route links + mobile responsiveness
+
+---
+
+#### **Day 5: Dashboard Overview**
+
+* Create dashboard widgets/cards:
+
+  * Orders Today
+  * Wallet Balance
+  * Escrow Status
+  * POD Activity
+
+🎯 *Deliverable*: Overview page styled and functional
+
+---
+
+#### **Day 6–7: Products Page**
+
+* Create:
+
+  * Product listing table (draft vs published)
+  * Product upload modal
+  * Product form with validations
+
+🎯 *Deliverable*: Add/Edit/Delete products (frontend only)
+
+---
+
+### 📦 Week 1 Deliverables
+
+* ✅ Onboarding Flow (Multi-Step)
+* ✅ Navigation + Layout
+* ✅ Dashboard Overview
+* ✅ Product Management UI
+* ✅ Deployed to **Vercel (staging)**
+
+---
+
+### 🚀 **Week 2: Orders, Delivery, Payments, Polish**
+
+#### **Day 8–9: Orders Page**
+
+* View orders by status (pending, processing, completed)
+* Accept, Cancel buttons
+* Assign delivery partner
+* Enable POD confirmation
+
+🎯 *Deliverable*: Order CRUD UI ready
+
+---
+
+#### **Day 10: Delivery Page**
+
+* View delivery partners
+* Track orders
+* Mark deliveries completed
+* Report issues (optional modal)
+
+🎯 *Deliverable*: Delivery tracker working
+
+---
+
+#### **Day 11: Payments Page**
+
+* Show:
+
+  * Wallet balance
+  * Escrow amounts
+  * Withdrawal account setup
+* Connect payment method (mockup for now)
+
+🎯 *Deliverable*: Payment UI + Escrow toggle
+
+---
+
+#### **Day 12: Settings + Support**
+
+* Settings:
+
+  * Update store info, password
+  * Enable/disable POD, escrow
+* Support:
+
+  * Submit ticket
+  * View FAQ (static for MVP)
+
+🎯 *Deliverable*: Basic store settings + support done
+
+---
+
+#### **Day 13: Final Polish**
+
+* Polish styles & animation
+* Improve mobile views
+* Lazy load stats
+* Toast alerts, form validation
+
+🎯 *Deliverable*: MVP frontend fully polished
+
+---
+
+#### **Day 14: Demo + Deploy**
+
+* Final Vercel deployment
+* Test all flows
+* Record 1-min walkthrough video
+* Notify your mentor (Daddy Rusiwat) with link
+
+🎯 *Deliverable*: MVP shipped
+
+---
+
+## 🔑 Benefits You'll Gain
+
+* ✅ **Build Discipline & Consistency** (daily tasks)
+* ✅ **Real-World Dashboard UI** experience
+* ✅ **Project You Can Present** to seniors and recruiters
+* ✅ **Foundation for Backend or Team Collaboration**
+* ✅ **Showcase-level Codebase** for portfolio
+
+---
+
+Would you like me to export this as a **Notion page**, **PDF**, or **Canva Note** format?

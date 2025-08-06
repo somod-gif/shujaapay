@@ -1,0 +1,58 @@
+src/
+└── app/
+    ├── Business/
+    │   ├── Onboarding/
+    │   │   └── page.tsx              # Existing onboarding flow
+    │   └── Dashboard/                # Main business dashboard
+    │       ├── layout.tsx            # Dashboard layout (sidebar + header)
+    │       ├── page.tsx              # Overview (metrics, recent activity)
+    │       │
+    │       ├── components/           # Shared dashboard components
+    │       │   ├── SidebarNav.tsx
+    │       │   ├── BusinessHeader.tsx
+    │       │   ├── MetricsGrid.tsx   # (Sales, Orders, Payouts cards)
+    │       │   └── ActivityFeed.tsx  # (Recent orders + notifications)
+    │       │
+    │       ├── products/
+    │       │   ├── page.tsx          # Product list + CRUD actions
+    │       │   ├── [id]/
+    │       │   │   └── page.tsx      # Single product management
+    │       │   └── components/
+    │       │       ├── ProductTable.tsx
+    │       │       └── VariantEditor.tsx
+    │       │
+    │       ├── orders/
+    │       │   ├── page.tsx          # Filterable orders list
+    │       │   ├── [id]/
+    │       │   │   └── page.tsx      # Order details + fulfillment
+    │       │   └── components/
+    │       │       ├── OrderFilters.tsx
+    │       │       └── FulfillmentTracker.tsx
+    │       │
+    │       ├── payments/
+    │       │   ├── page.tsx          # Escrow + payout dashboard
+    │       │   └── components/
+    │       │       ├── EscrowFlow.tsx
+    │       │       └── PayoutHistory.tsx
+    │       │
+    │       ├── logistics/            # Combined deliveries/shipping
+    │       │   ├── page.tsx          # Delivery management
+    │       │   ├── [id]/
+    │       │   │   └── page.tsx      # Single delivery tracking
+    │       │   └── components/
+    │       │       ├── PODVerifier.tsx  # Pay-on-delivery
+    │       │       └── ShippingLabel.tsx
+    │       │
+    │       ├── disputes/
+    │       │   ├── page.tsx          # Active dispute cases
+    │       │   ├── [id]/
+    │       │   │   └── page.tsx      # Dispute resolution
+    │       │   └── components/
+    │       │       ├── EvidenceManager.tsx
+    │       │       └── MediationChat.tsx
+    │       │
+    │       └── settings/
+    │           ├── page.tsx          # Business profile + store config
+    │           └── components/
+    │               ├── ThemeCustomizer.tsx
+    │               └── DomainManager.tsx

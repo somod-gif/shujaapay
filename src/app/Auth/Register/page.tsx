@@ -103,7 +103,7 @@ const RegisterPage = () => {
         {/* Left Side - Form */}
         <div className="p-8 sm:p-10">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Create Your KAIHMA Account</h1>
+            <h1 className="text-3xl text-center font-bold text-gray-900 mb-2">Register</h1>
             <p className="text-gray-600">Join Africa's Commerce Operating System</p>
           </div>
 
