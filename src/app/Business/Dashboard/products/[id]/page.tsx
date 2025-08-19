@@ -3,6 +3,9 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { ArrowLeftIcon } from '@heroicons/react/24/outline'
 
+// Define ProductStatus locally
+type ProductStatus = 'active' | 'inactive' | 'out_of_stock' | 'draft';
+
 // Mock product data
 const product = {
   id: 'PROD-001',
@@ -14,7 +17,7 @@ const product = {
   sku: 'WH-2024-001',
   category: 'Electronics',
   images: ['/placeholder-image.jpg'],
-  status: 'active' as const,
+  status: 'active' as ProductStatus,
   weight: '0.5kg',
   dimensions: '20x15x5cm'
 }
@@ -254,6 +257,10 @@ export default function ProductEditPage({ params }: { params: { id: string } }) 
           <button
             type="submit"
             className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            onClick={(e) => {
+              e.preventDefault(); // Prevent default form submission for demo
+              handleSubmit(e);
+            }}
           >
             Update Product
           </button>

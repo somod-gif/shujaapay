@@ -1,11 +1,14 @@
 'use client'
 import { useState } from 'react'
 import { PlusIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline'
-import { StatusBadge, ProductStatus } from '../components/StatusBadge'
+import { StatusBadge } from '../components/StatusBadge' // Remove ProductStatus import from here
 import { FilterBar } from '../components/FilterBar'
 import { BulkImporter } from './components/BulkImporter'
 import { InventoryAlert } from './components/InventoryAlert'
 import Link from 'next/link'
+
+// Define ProductStatus locally since it's not exported from StatusBadge
+type ProductStatus = 'active' | 'inactive' | 'out_of_stock' | 'draft';
 
 // Mock data
 const products = [
