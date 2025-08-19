@@ -56,3 +56,54 @@ src/
     │           └── components/
     │               ├── ThemeCustomizer.tsx
     │               └── DomainManager.tsx
+
+
+
+
+
+└── app/
+    └── Business/
+        ├── Onboarding/
+        │   └── page.tsx                 # Existing flow
+        │
+        └── Dashboard/
+            ├── layout.tsx                # Shared layout (sidebar + header)
+            ├── page.tsx                  # Default view: Sales overview (metrics + activity feed)
+            │
+            ├── _components/              # Shared across all tabs
+            │   ├── SidebarNav.tsx        # Tab navigation
+            │   ├── BusinessHeader.tsx    # Title + notifications bell
+            │   ├── DataTable.tsx         # Reusable sortable/paginated table
+            │   ├── StatusBadge.tsx       # Order status labels (e.g., "Paid", "In Delivery")
+            │   └── FilterBar.tsx         # Date/product/category filters
+            │
+            ├── orders/
+            │   ├── page.tsx             # Orders list (tabs: Active/Completed/Cancelled)
+            │   ├── [id]/
+            │   │   └── page.tsx          # Order details + fulfillment actions
+            │   │       ├── DeliveryTracker.tsx  # Map/status timeline
+            │   │       └── PODUpload.tsx       # Proof-of-delivery uploader
+            │   └── components/
+            │       ├── OrderActions.tsx  # "Mark as Shipped", "Cancel", etc.
+            │       └── NotesModal.tsx    # Internal notes for disputes
+            │
+            ├── products/
+            │   ├── page.tsx             # Product list + bulk actions
+            │   ├── [id]/
+            │   │   └── page.tsx          # Edit product (with image upload)
+            │   └── components/
+            │       ├── BulkImporter.tsx  # Excel/drag-and-drop UI
+            │       └── InventoryAlert.tsx # Low-stock warnings
+            │
+            ├── payments/
+            │   ├── page.tsx              # Balance summary (Paid/Escrow/Pending)
+            │   └── PayoutRequest.tsx     # One-click withdrawal modal
+            │
+            ├── analytics/
+            │   ├── page.tsx              # Sales trends, top products, refunds
+            │   └── SalesChart.tsx        # Interactive time-period toggles
+            │
+            └── settings/
+                ├── page.tsx              # Store theme, bank details, notifications
+                ├── ThemePicker.tsx       # Color/font customization
+                └── PayoutPreferences.tsx # Bank/wallet connections

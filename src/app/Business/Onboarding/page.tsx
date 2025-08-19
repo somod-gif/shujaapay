@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ChevronLeft, ChevronRight, Check, ArrowRight, Share2, Facebook, Twitter } from 'lucide-react';
+import {
+  ChevronLeft,
+  ChevronRight,
+  Check,
+  ArrowRight,
+  Share2,
+  Facebook,
+  Twitter,
+} from "lucide-react";
 import { ProgressSteps } from "./components/ProgressSteps";
 import { BusinessProfile } from "./components/BusinessProfile";
 import { ProductUpload } from "./components/ProductUpload";
@@ -43,19 +51,36 @@ export default function Onboarding() {
 
   const submitForm = () => {
     console.log("Form submitted:", formData);
-    router.push(`/store/${formData.storeName.toLowerCase().replace(/\s+/g, '-')}`);
+    router.push(
+      `/store/${formData.storeName.toLowerCase().replace(/\s+/g, "-")}`
+    );
   };
 
   const renderStep = () => {
     const commonProps = { formData, setFormData, nextStep, prevStep };
-    
+    const goToDashboard = () => {
+      router.push("/Business/Dashboard");
+    };
+
     switch (currentStep) {
-      case 1: return <BusinessProfile {...commonProps} />;
-      case 2: return <ProductUpload {...commonProps} />;
-      case 3: return <PaymentsSetup {...commonProps} />;
-      case 4: return <DeliveryIntegration {...commonProps} />;
-      case 5: return <GoLive {...commonProps} submitForm={submitForm} />;
-      default: return <BusinessProfile {...commonProps} />;
+      case 1:
+        return <BusinessProfile {...commonProps} />;
+      case 2:
+        return <ProductUpload {...commonProps} />;
+      case 3:
+        return <PaymentsSetup {...commonProps} />;
+      case 4:
+        return <DeliveryIntegration {...commonProps} />;
+      case 5:
+        return (
+          <GoLive
+            formData={formData}
+            submitForm={submitForm}
+            goToDashboard={goToDashboard}
+          />
+        );
+      default:
+        return <BusinessProfile {...commonProps} />;
     }
   };
 
@@ -67,15 +92,14 @@ export default function Onboarding() {
             Welcome to KAIHMA
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Get your store ready to sell in minutes. Just follow these simple steps.
+            Get your store ready to sell in minutes. Just follow these simple
+            steps.
           </p>
         </div>
 
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 overflow-hidden">
           <ProgressSteps currentStep={currentStep} />
-          <div className="p-8 lg:p-12">
-            {renderStep()}
-          </div>
+          <div className="p-8 lg:p-12">{renderStep()}</div>
         </div>
       </div>
     </div>

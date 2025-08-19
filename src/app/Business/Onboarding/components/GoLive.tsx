@@ -1,13 +1,14 @@
 import { OnboardingFormData } from "../types";
-import { Check, Share2, Facebook, Twitter, ArrowRight } from 'lucide-react';
+import { Check, Share2, Facebook, Twitter, ArrowRight, LayoutDashboard } from 'lucide-react';
 import Image from 'next/image';
 
 interface GoLiveProps {
   formData: OnboardingFormData;
   submitForm: () => void;
+  goToDashboard: () => void;
 }
 
-export const GoLive = ({ formData, submitForm }: GoLiveProps) => {
+export const GoLive = ({ formData, submitForm, goToDashboard }: GoLiveProps) => {
   const storeUrl = `kaihma.com/store/${formData.storeName.toLowerCase().replace(/\s+/g, '-')}`;
 
   return (
@@ -45,14 +46,25 @@ export const GoLive = ({ formData, submitForm }: GoLiveProps) => {
         </div>
       </div>
 
-      <button
-        onClick={submitForm}
-        className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-300"
-      >
-        <ArrowRight className="w-5 h-5 mr-2" />
-        Go to Your Store
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-      </button>
+      <div className="flex flex-col sm:flex-row justify-center gap-4">
+        <button
+          onClick={submitForm}
+          className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-300"
+        >
+          <ArrowRight className="w-5 h-5 mr-2" />
+          Go to Your Store
+          <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+        </button>
+
+        <button
+          onClick={goToDashboard}
+          className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-800 bg-gray-100 hover:bg-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-gray-300"
+        >
+          <LayoutDashboard className="w-5 h-5 mr-2" />
+          Go to Dashboard
+          <div className="absolute inset-0 bg-gray-200 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+        </button>
+      </div>
     </div>
   );
 };

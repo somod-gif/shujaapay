@@ -2,17 +2,26 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Home, Package, ShoppingCart, Truck, Wallet } from 'lucide-react'
+import { 
+  Home, 
+  Package, 
+  ShoppingCart, 
+  Wallet, 
+  BarChart3,
+  Settings 
+} from 'lucide-react'
 
 export function SidebarNav({ mobile = false }: { mobile?: boolean }) {
   const pathname = usePathname()
 
+  // Updated to match MVP requirements exactly
   const navItems = [
     { name: 'Overview', href: '/Business/Dashboard', icon: Home },
-    { name: 'Products', href: '/Business/Dashboard/products', icon: Package },
     { name: 'Orders', href: '/Business/Dashboard/orders', icon: ShoppingCart },
-    { name: 'Logistics', href: '/Business/Dashboard/logistics', icon: Truck },
+    { name: 'Products', href: '/Business/Dashboard/products', icon: Package },
     { name: 'Payments', href: '/Business/Dashboard/payments', icon: Wallet },
+    { name: 'Analytics', href: '/Business/Dashboard/analytics', icon: BarChart3 },
+    { name: 'Settings', href: '/Business/Dashboard/settings', icon: Settings },
   ]
 
   return (
