@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { ArrowLeftIcon } from '@heroicons/react/24/outline'
 
@@ -22,21 +22,53 @@ const product = {
   dimensions: '20x15x5cm'
 }
 
-export default function ProductEditPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default function ProductEditPage({ params }: PageProps) {
+  const [resolvedParams, setResolvedParams] = useState<{ id: string }>({ id: '' });
   const router = useRouter()
   const [formData, setFormData] = useState({
-    name: product.name,
-    description: product.description,
-    price: product.price,
-    originalPrice: product.originalPrice,
-    stock: product.stock,
-    sku: product.sku,
-    category: product.category,
-    weight: product.weight,
-    dimensions: product.dimensions
+    name: '',
+    description: '',
+    price: 0,
+    originalPrice: 0,
+    stock: 0,
+    sku: '',
+    category: '',
+    weight: '',
+    dimensions: ''
   })
-  const [images, setImages] = useState<string[]>(product.images)
+  const [images, setImages] = useState<string[]>([])
   const [isUploading, setIsUploading] = useState(false)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    // Resolve the params promise
+    const resolveParams = async () => {
+      const resolved = await params;
+      setResolvedParams(resolved);
+      
+      // In a real app, you would fetch product data based on the ID
+      // For now, we'll use the mock data
+      setFormData({
+        name: product.name,
+        description: product.description,
+        price: product.price,
+        originalPrice: product.originalPrice,
+        stock: product.stock,
+        sku: product.sku,
+        category: product.category,
+        weight: product.weight,
+        dimensions: product.dimensions
+      });
+      setImages(product.images);
+      setLoading(false);
+    };
+
+    resolveParams();
+  }, [params]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -59,6 +91,10 @@ export default function ProductEditPage({ params }: { params: { id: string } }) 
 
   const removeImage = (index: number) => {
     setImages(prev => prev.filter((_, i) => i !== index))
+  }
+
+  if (loading) {
+    return <div className="flex justify-center items-center h-64">Loading...</div>;
   }
 
   return (
@@ -257,10 +293,6 @@ export default function ProductEditPage({ params }: { params: { id: string } }) 
           <button
             type="submit"
             className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-            onClick={(e) => {
-              e.preventDefault(); // Prevent default form submission for demo
-              handleSubmit(e);
-            }}
           >
             Update Product
           </button>

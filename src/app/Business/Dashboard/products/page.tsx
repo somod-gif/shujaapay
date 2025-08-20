@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { PlusIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline'
-import { StatusBadge } from '../components/StatusBadge' // Remove ProductStatus import from here
+import { StatusBadge } from '../components/StatusBadge'
 import { FilterBar } from '../components/FilterBar'
 import { BulkImporter } from './components/BulkImporter'
 import { InventoryAlert } from './components/InventoryAlert'

@@ -1,11 +1,20 @@
-import { steps } from "../page";
 import { Check } from "lucide-react";
+
+interface Step {
+  number: number;
+  title: string;
+  description: string;
+}
+
+interface ProgressStepsProps {
+  currentStep: number;
+  steps: Step[];
+}
 
 export const ProgressSteps = ({
   currentStep,
-}: {
-  currentStep: number;
-}) => (
+  steps,
+}: ProgressStepsProps) => (
   <div className="bg-gradient-to-br from-slate-50/80 to-white/60 backdrop-blur-sm px-4 sm:px-6 lg:px-8 py-6 lg:py-8 border-b border-slate-200/60">
     {/* Desktop Layout */}
     <div className="hidden lg:block">

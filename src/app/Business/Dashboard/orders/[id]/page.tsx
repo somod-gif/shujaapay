@@ -1,4 +1,3 @@
-// order/[id]/page.tsx
 'use client'
 import { useState } from 'react'
 import { StatusBadge } from '../../components/StatusBadge'
@@ -27,7 +26,11 @@ const order = {
   trackingNumber: 'TRK-789456123'
 }
 
-export default function OrderDetailPage({ params }: { params: { id: string } }) {
+// For Next.js 15, we need to make this an async function and await params
+export default async function OrderDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  // Await the params promise
+  const { id } = await params;
+  
   const [activeTab, setActiveTab] = useState('details')
 
   const tabs = [

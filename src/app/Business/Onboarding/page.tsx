@@ -19,17 +19,19 @@ import { DeliveryIntegration } from "./components/DeliveryIntegration";
 import { GoLive } from "./components/GoLive";
 import { OnboardingFormData } from "./types";
 
-export const steps = [
-  { number: 1, title: "Business Profile", description: "Setup your store" },
-  { number: 2, title: "Add Product", description: "Upload first item" },
-  { number: 3, title: "Payments", description: "Configure payments" },
-  { number: 4, title: "Delivery", description: "Shipping setup" },
-  { number: 5, title: "Go Live", description: "Launch your store" },
-];
-
 export default function Onboarding() {
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
+  
+  // Move steps array inside the component
+  const steps = [
+    { number: 1, title: "Business Profile", description: "Setup your store" },
+    { number: 2, title: "Add Product", description: "Upload first item" },
+    { number: 3, title: "Payments", description: "Configure payments" },
+    { number: 4, title: "Delivery", description: "Shipping setup" },
+    { number: 5, title: "Go Live", description: "Launch your store" },
+  ];
+  
   const [formData, setFormData] = useState<OnboardingFormData>({
     storeName: "",
     businessType: "",
@@ -98,7 +100,7 @@ export default function Onboarding() {
         </div>
 
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 overflow-hidden">
-          <ProgressSteps currentStep={currentStep} />
+          <ProgressSteps currentStep={currentStep} steps={steps} />
           <div className="p-8 lg:p-12">{renderStep()}</div>
         </div>
       </div>
